@@ -1,0 +1,16 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <Import Project="..\..\build\Novolis.Workspaces.Packaging.props" />
+  <PropertyGroup>
+    <PackageId>Novolis.Workspaces.Snapshots</PackageId>
+    <RootNamespace>Novolis.Workspaces.Snapshots</RootNamespace>
+    <IsPackable>true</IsPackable>
+    <Description>Zip snapshot adapter for Novolis workspaces with include/exclude policy.</Description>
+  </PropertyGroup>
+  <ItemGroup>
+    <PackageReference Include="System.IO.Abstractions" />
+    <ProjectReference Include="..\Novolis.Workspaces.Abstractions\Novolis.Workspaces.Abstractions.csproj" />
+    <ProjectReference Include="..\Novolis.Workspaces.FileSystem\Novolis.Workspaces.FileSystem.csproj" />
+    <ProjectReference Include="..\Novolis.Snapshots.Abstractions\Novolis.Snapshots.Abstractions.csproj" />
+    <ProjectReference Include="..\Novolis.Snapshots.Zip\Novolis.Snapshots.Zip.csproj" />
+  </ItemGroup>
+</Project>

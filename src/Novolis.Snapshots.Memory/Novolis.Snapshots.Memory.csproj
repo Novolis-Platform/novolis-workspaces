@@ -1,0 +1,12 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <Import Project="..\..\build\Novolis.Workspaces.Packaging.props" />
+  <PropertyGroup>
+    <PackageId>Novolis.Snapshots.Memory</PackageId>
+    <RootNamespace>Novolis.Snapshots.Memory</RootNamespace>
+    <IsPackable>true</IsPackable>
+    <Description>In-memory snapshot store for tests and ephemeral sessions.</Description>
+  </PropertyGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Novolis.Snapshots.Abstractions\Novolis.Snapshots.Abstractions.csproj" />
+  </ItemGroup>
+</Project>

@@ -1,0 +1,9 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <Import Project="..\..\build\Novolis.Workspaces.Packaging.props" />
+  <PropertyGroup>
+    <PackageId>Novolis.Timeline.Abstractions</PackageId>
+    <RootNamespace>Novolis.Timeline</RootNamespace>
+    <IsPackable>true</IsPackable>
+    <Description>Branchable history graph over snapshot references (not version control).</Description>
+  </PropertyGroup>
+</Project>

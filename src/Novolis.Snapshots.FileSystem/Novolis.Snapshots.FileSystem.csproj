@@ -1,0 +1,13 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <Import Project="..\..\build\Novolis.Workspaces.Packaging.props" />
+  <PropertyGroup>
+    <PackageId>Novolis.Snapshots.FileSystem</PackageId>
+    <RootNamespace>Novolis.Snapshots.FileSystem</RootNamespace>
+    <IsPackable>true</IsPackable>
+    <Description>File-system blob snapshot store using System.IO.Abstractions.</Description>
+  </PropertyGroup>
+  <ItemGroup>
+    <PackageReference Include="System.IO.Abstractions" />
+    <ProjectReference Include="..\Novolis.Snapshots.Abstractions\Novolis.Snapshots.Abstractions.csproj" />
+  </ItemGroup>
+</Project>

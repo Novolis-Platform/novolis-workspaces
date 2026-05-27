@@ -1,0 +1,14 @@
+<Project>
+  <PropertyGroup>
+    <TargetFramework>net10.0</TargetFramework>
+    <LangVersion>latest</LangVersion>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
+    <NoWarn>$(NoWarn);CS1591</NoWarn>
+  </PropertyGroup>
+  <Import Project="$(MSBuildThisFileDirectory)..\build\Novolis.Workspaces.Documentation.props"
+          Condition="Exists('$(MSBuildThisFileDirectory)..\build\Novolis.Workspaces.Documentation.props')" />
+  <Import Project="$(MSBuildThisFileDirectory)..\..\novolis-governance\build\Novolis.PackageReadme.props"
+          Condition="Exists('$(MSBuildThisFileDirectory)..\..\novolis-governance\build\Novolis.PackageReadme.props')" />
+</Project>

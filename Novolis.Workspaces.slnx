@@ -1,0 +1,24 @@
+<Solution>
+  <Folder Name="/src/">
+    <Project Path="src/Novolis.Snapshots.Abstractions/Novolis.Snapshots.Abstractions.csproj" />
+    <Project Path="src/Novolis.Snapshots.Memory/Novolis.Snapshots.Memory.csproj" />
+    <Project Path="src/Novolis.Snapshots.Json/Novolis.Snapshots.Json.csproj" />
+    <Project Path="src/Novolis.Snapshots.FileSystem/Novolis.Snapshots.FileSystem.csproj" />
+    <Project Path="src/Novolis.Snapshots.Zip/Novolis.Snapshots.Zip.csproj" />
+    <Project Path="src/Novolis.Timeline.Abstractions/Novolis.Timeline.Abstractions.csproj" />
+    <Project Path="src/Novolis.Timeline.Memory/Novolis.Timeline.Memory.csproj" />
+    <Project Path="src/Novolis.Timeline.FileSystem/Novolis.Timeline.FileSystem.csproj" />
+    <Project Path="src/Novolis.Timeline.Presentation/Novolis.Timeline.Presentation.csproj" />
+    <Project Path="src/Novolis.Workspaces.Abstractions/Novolis.Workspaces.Abstractions.csproj" />
+    <Project Path="src/Novolis.Workspaces.FileSystem/Novolis.Workspaces.FileSystem.csproj" />
+    <Project Path="src/Novolis.Workspaces.Snapshots/Novolis.Workspaces.Snapshots.csproj" />
+    <Project Path="src/Novolis.Workspaces.Timeline/Novolis.Workspaces.Timeline.csproj" />
+    <Project Path="src/Novolis.Workspaces.Projects.Timeline/Novolis.Workspaces.Projects.Timeline.csproj" />
+  </Folder>
+  <Folder Name="/tests/">
+    <Project Path="tests/Novolis.Workspaces.Unit/Novolis.Workspaces.Unit.csproj" />
+  </Folder>
+  <Folder Name="/samples/">
+    <Project Path="samples/MinimalWorkspaceTimeline/MinimalWorkspaceTimeline.csproj" />
+  </Folder>
+</Solution>

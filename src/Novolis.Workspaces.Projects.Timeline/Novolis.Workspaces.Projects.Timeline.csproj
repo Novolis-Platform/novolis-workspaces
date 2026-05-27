@@ -1,0 +1,17 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <Import Project="..\..\build\Novolis.Workspaces.Packaging.props" />
+  <PropertyGroup>
+    <PackageId>Novolis.Workspaces.Projects.Timeline</PackageId>
+    <RootNamespace>Novolis.Workspaces.Projects.Timeline</RootNamespace>
+    <IsPackable>true</IsPackable>
+    <Description>Project-scoped save points and restore points within a workspace.</Description>
+  </PropertyGroup>
+  <ItemGroup>
+    <PackageReference Include="System.IO.Abstractions" />
+    <ProjectReference Include="..\Novolis.Workspaces.Abstractions\Novolis.Workspaces.Abstractions.csproj" />
+    <ProjectReference Include="..\Novolis.Workspaces.Snapshots\Novolis.Workspaces.Snapshots.csproj" />
+    <ProjectReference Include="..\Novolis.Workspaces.Timeline\Novolis.Workspaces.Timeline.csproj" />
+    <ProjectReference Include="..\Novolis.Timeline.Abstractions\Novolis.Timeline.Abstractions.csproj" />
+    <ProjectReference Include="..\Novolis.Snapshots.Abstractions\Novolis.Snapshots.Abstractions.csproj" />
+  </ItemGroup>
+</Project>

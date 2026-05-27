@@ -1,0 +1,46 @@
+{
+  "packages": {
+    "Novolis.Snapshots.Abstractions": {
+      "project": "src/Novolis.Snapshots.Abstractions/Novolis.Snapshots.Abstractions.csproj"
+    },
+    "Novolis.Snapshots.Memory": {
+      "project": "src/Novolis.Snapshots.Memory/Novolis.Snapshots.Memory.csproj"
+    },
+    "Novolis.Snapshots.Json": {
+      "project": "src/Novolis.Snapshots.Json/Novolis.Snapshots.Json.csproj"
+    },
+    "Novolis.Snapshots.FileSystem": {
+      "project": "src/Novolis.Snapshots.FileSystem/Novolis.Snapshots.FileSystem.csproj"
+    },
+    "Novolis.Snapshots.Zip": {
+      "project": "src/Novolis.Snapshots.Zip/Novolis.Snapshots.Zip.csproj"
+    },
+    "Novolis.Timeline.Abstractions": {
+      "project": "src/Novolis.Timeline.Abstractions/Novolis.Timeline.Abstractions.csproj"
+    },
+    "Novolis.Timeline.Memory": {
+      "project": "src/Novolis.Timeline.Memory/Novolis.Timeline.Memory.csproj"
+    },
+    "Novolis.Timeline.FileSystem": {
+      "project": "src/Novolis.Timeline.FileSystem/Novolis.Timeline.FileSystem.csproj"
+    },
+    "Novolis.Timeline.Presentation": {
+      "project": "src/Novolis.Timeline.Presentation/Novolis.Timeline.Presentation.csproj"
+    },
+    "Novolis.Workspaces.Abstractions": {
+      "project": "src/Novolis.Workspaces.Abstractions/Novolis.Workspaces.Abstractions.csproj"
+    },
+    "Novolis.Workspaces.FileSystem": {
+      "project": "src/Novolis.Workspaces.FileSystem/Novolis.Workspaces.FileSystem.csproj"
+    },
+    "Novolis.Workspaces.Snapshots": {
+      "project": "src/Novolis.Workspaces.Snapshots/Novolis.Workspaces.Snapshots.csproj"
+    },
+    "Novolis.Workspaces.Timeline": {
+      "project": "src/Novolis.Workspaces.Timeline/Novolis.Workspaces.Timeline.csproj"
+    },
+    "Novolis.Workspaces.Projects.Timeline": {
+      "project": "src/Novolis.Workspaces.Projects.Timeline/Novolis.Workspaces.Projects.Timeline.csproj"
+    }
+  }
+}

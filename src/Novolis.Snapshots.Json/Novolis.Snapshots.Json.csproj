@@ -1,0 +1,12 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <Import Project="..\..\build\Novolis.Workspaces.Packaging.props" />
+  <PropertyGroup>
+    <PackageId>Novolis.Snapshots.Json</PackageId>
+    <RootNamespace>Novolis.Snapshots.Json</RootNamespace>
+    <IsPackable>true</IsPackable>
+    <Description>System.Text.Json state serializer for Novolis snapshots.</Description>
+  </PropertyGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Novolis.Snapshots.Abstractions\Novolis.Snapshots.Abstractions.csproj" />
+  </ItemGroup>
+</Project>

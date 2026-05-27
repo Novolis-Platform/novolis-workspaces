@@ -1,0 +1,26 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <RootNamespace>Novolis.Workspaces.Unit</RootNamespace>
+    <IsPackable>false</IsPackable>
+    <IsTestProject>true</IsTestProject>
+  </PropertyGroup>
+  <ItemGroup>
+    <PackageReference Include="JetBrains.Annotations" />
+    <PackageReference Include="TUnit" />
+    <PackageReference Include="System.IO.Abstractions.TestingHelpers" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\src\Novolis.Snapshots.Abstractions\Novolis.Snapshots.Abstractions.csproj" />
+    <ProjectReference Include="..\..\src\Novolis.Snapshots.Memory\Novolis.Snapshots.Memory.csproj" />
+    <ProjectReference Include="..\..\src\Novolis.Snapshots.Json\Novolis.Snapshots.Json.csproj" />
+    <ProjectReference Include="..\..\src\Novolis.Snapshots.Zip\Novolis.Snapshots.Zip.csproj" />
+    <ProjectReference Include="..\..\src\Novolis.Timeline.Abstractions\Novolis.Timeline.Abstractions.csproj" />
+    <ProjectReference Include="..\..\src\Novolis.Timeline.Memory\Novolis.Timeline.Memory.csproj" />
+    <ProjectReference Include="..\..\src\Novolis.Timeline.FileSystem\Novolis.Timeline.FileSystem.csproj" />
+    <ProjectReference Include="..\..\src\Novolis.Timeline.Presentation\Novolis.Timeline.Presentation.csproj" />
+    <ProjectReference Include="..\..\src\Novolis.Workspaces.Abstractions\Novolis.Workspaces.Abstractions.csproj" />
+    <ProjectReference Include="..\..\src\Novolis.Workspaces.FileSystem\Novolis.Workspaces.FileSystem.csproj" />
+    <ProjectReference Include="..\..\src\Novolis.Workspaces.Snapshots\Novolis.Workspaces.Snapshots.csproj" />
+    <ProjectReference Include="..\..\src\Novolis.Workspaces.Timeline\Novolis.Workspaces.Timeline.csproj" />
+  </ItemGroup>
+</Project>

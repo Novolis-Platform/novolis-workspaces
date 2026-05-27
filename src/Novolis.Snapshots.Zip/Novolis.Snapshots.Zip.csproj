@@ -1,0 +1,13 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <Import Project="..\..\build\Novolis.Workspaces.Packaging.props" />
+  <PropertyGroup>
+    <PackageId>Novolis.Snapshots.Zip</PackageId>
+    <RootNamespace>Novolis.Snapshots.Zip</RootNamespace>
+    <IsPackable>true</IsPackable>
+    <Description>Zip archive snapshot store for serialized state.</Description>
+  </PropertyGroup>
+  <ItemGroup>
+    <PackageReference Include="System.IO.Abstractions" />
+    <ProjectReference Include="..\Novolis.Snapshots.Abstractions\Novolis.Snapshots.Abstractions.csproj" />
+  </ItemGroup>
+</Project>

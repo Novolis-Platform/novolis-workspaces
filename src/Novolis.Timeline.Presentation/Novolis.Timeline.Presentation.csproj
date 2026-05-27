@@ -1,0 +1,12 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <Import Project="..\..\build\Novolis.Workspaces.Packaging.props" />
+  <PropertyGroup>
+    <PackageId>Novolis.Timeline.Presentation</PackageId>
+    <RootNamespace>Novolis.Timeline.Presentation</RootNamespace>
+    <IsPackable>true</IsPackable>
+    <Description>Tree and flat-row projections for timeline UI (Avalonia, Blazor, WPF).</Description>
+  </PropertyGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Novolis.Timeline.Abstractions\Novolis.Timeline.Abstractions.csproj" />
+  </ItemGroup>
+</Project>

@@ -1,0 +1,14 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <Import Project="..\..\build\Novolis.Workspaces.Packaging.props" />
+  <PropertyGroup>
+    <PackageId>Novolis.Timeline.FileSystem</PackageId>
+    <RootNamespace>Novolis.Timeline.FileSystem</RootNamespace>
+    <IsPackable>true</IsPackable>
+    <Description>Persists timeline graphs under a directory using System.IO.Abstractions.</Description>
+  </PropertyGroup>
+  <ItemGroup>
+    <PackageReference Include="System.IO.Abstractions" />
+    <ProjectReference Include="..\Novolis.Timeline.Abstractions\Novolis.Timeline.Abstractions.csproj" />
+    <ProjectReference Include="..\Novolis.Snapshots.Json\Novolis.Snapshots.Json.csproj" />
+  </ItemGroup>
+</Project>

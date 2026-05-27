@@ -1,0 +1,9 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <Import Project="..\..\build\Novolis.Workspaces.Packaging.props" />
+  <PropertyGroup>
+    <PackageId>Novolis.Snapshots.Abstractions</PackageId>
+    <RootNamespace>Novolis.Snapshots</RootNamespace>
+    <IsPackable>true</IsPackable>
+    <Description>Save/load state primitives for Novolis snapshots (not version control).</Description>
+  </PropertyGroup>
+</Project>

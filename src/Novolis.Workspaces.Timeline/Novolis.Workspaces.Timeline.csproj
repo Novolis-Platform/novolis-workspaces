@@ -1,0 +1,15 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <Import Project="..\..\build\Novolis.Workspaces.Packaging.props" />
+  <PropertyGroup>
+    <PackageId>Novolis.Workspaces.Timeline</PackageId>
+    <RootNamespace>Novolis.Workspaces.Timeline</RootNamespace>
+    <IsPackable>true</IsPackable>
+    <Description>Workspace save points and restore points composed from snapshots and timeline.</Description>
+  </PropertyGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Novolis.Workspaces.Abstractions\Novolis.Workspaces.Abstractions.csproj" />
+    <ProjectReference Include="..\Novolis.Workspaces.Snapshots\Novolis.Workspaces.Snapshots.csproj" />
+    <ProjectReference Include="..\Novolis.Timeline.Abstractions\Novolis.Timeline.Abstractions.csproj" />
+    <ProjectReference Include="..\Novolis.Snapshots.Abstractions\Novolis.Snapshots.Abstractions.csproj" />
+  </ItemGroup>
+</Project>

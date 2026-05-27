@@ -1,0 +1,12 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <Import Project="..\..\build\Novolis.Workspaces.Packaging.props" />
+  <PropertyGroup>
+    <PackageId>Novolis.Timeline.Memory</PackageId>
+    <RootNamespace>Novolis.Timeline.Memory</RootNamespace>
+    <IsPackable>true</IsPackable>
+    <Description>In-memory timeline for tests and ephemeral sessions.</Description>
+  </PropertyGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Novolis.Timeline.Abstractions\Novolis.Timeline.Abstractions.csproj" />
+  </ItemGroup>
+</Project>
