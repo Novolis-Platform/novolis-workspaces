@@ -27,11 +27,21 @@ Adapters compose the three (`Novolis.Workspaces.Snapshots`, `Novolis.Workspaces.
 - [design.md](docs/design.md) — boundaries and on-disk layout
 - [getting-started.md](docs/getting-started.md) — quick start
 
-## Sample
+## Samples
+
+**Console timeline walkthrough:**
 
 ```bash
 dotnet run --project samples/MinimalWorkspaceTimeline
 ```
+
+**MeshBench** — Avalonia mini CAD (boxes/spheres, path-traced viewport, workspace save points + timeline, save chime):
+
+```bash
+dotnet run --project samples/MeshBench
+```
+
+Workspace files default to `%LocalAppData%/Novolis/MeshBench/default-workspace`.
 
 ## Boundaries
 
