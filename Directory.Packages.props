@@ -9,5 +9,23 @@
     <PackageVersion Include="TUnit" Version="1.44.39" />
     <PackageVersion Include="System.IO.Abstractions" Version="22.1.0" />
     <PackageVersion Include="System.IO.Abstractions.TestingHelpers" Version="22.1.0" />
+    <PackageVersion Include="Avalonia" Version="12.0.2" />
+    <PackageVersion Include="Avalonia.Controls.DataGrid" Version="12.0.0" />
+    <PackageVersion Include="Avalonia.Desktop" Version="12.0.2" />
+    <PackageVersion Include="Avalonia.Fonts.Inter" Version="12.0.2" />
+    <PackageVersion Include="Avalonia.Themes.Fluent" Version="12.0.2" />
+    <PackageVersion Include="Microsoft.Extensions.Hosting" Version="10.0.0" />
+    <PackageVersion Include="Novolis.Avalonia.Rendering" Version="2026.1.*" />
+    <PackageVersion Include="Novolis.Audio.Core" Version="2026.1.*" />
+    <PackageVersion Include="Novolis.Audio.Playback" Version="2026.1.*" />
+    <PackageVersion Include="Novolis.Audio.Host.NAudio" Version="2026.1.*" />
+    <PackageVersion Include="Novolis.Rendering.Backends.Cpu" Version="2026.1.*" />
+    <PackageVersion Include="Novolis.Rendering.Compile" Version="2026.1.*" />
+    <PackageVersion Include="Novolis.Rendering.DependencyInjection" Version="2026.1.*" />
+    <PackageVersion Include="Novolis.Rendering.Materials" Version="2026.1.*" />
+    <PackageVersion Include="Novolis.Rendering.PathTrace.Demos" Version="2026.1.*" />
+    <PackageVersion Include="Novolis.Rendering.Presentation.Silk" Version="2026.1.*" />
+    <PackageVersion Include="Novolis.Rendering.Runtime" Version="2026.1.*" />
+    <PackageVersion Include="Novolis.Rendering.Scene" Version="2026.1.*" />
   </ItemGroup>
 </Project>
