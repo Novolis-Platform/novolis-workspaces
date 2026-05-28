@@ -1,3 +1,4 @@
+using System.IO;
 using System.IO.Abstractions;
 using System.IO.Compression;
 using Novolis.Snapshots;
@@ -44,7 +45,7 @@ public sealed class ZipWorkspaceSnapshotStore : ISnapshotStore<IWorkspace, ZipSn
                 var relative = GetRelativePath(workspace.Root.FullName, file.FullName);
                 var entry = archive.CreateEntry(relative.Replace('\\', '/'), CompressionLevel.Optimal);
                 await using var entryStream = entry.Open();
-                await using var source = _fileSystem.File.OpenRead(file.FullName);
+                await using var source = OpenFileForSnapshotRead(file.FullName);
                 await source.CopyToAsync(entryStream, cancellationToken).ConfigureAwait(false);
             }
         }
@@ -128,6 +129,9 @@ public sealed class ZipWorkspaceSnapshotStore : ISnapshotStore<IWorkspace, ZipSn
             _fileSystem.Directory.Delete(path, recursive: true);
         _fileSystem.Directory.Move(backup, path);
     }
+
+    private Stream OpenFileForSnapshotRead(string path) =>
+        _fileSystem.FileStream.New(path, FileMode.Open, FileAccess.Read, FileShare.ReadWrite | FileShare.Delete);
 
     private static string GetRelativePath(string root, string fullPath)
     {

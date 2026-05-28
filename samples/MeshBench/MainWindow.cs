@@ -30,6 +30,7 @@ internal sealed class MainWindow : Window
     private TimelineTreeRow? _selectedTimelineRow;
     private IReadOnlyList<TimelineTreeRow> _timelineRows = [];
     private bool _dragging;
+    private int _saveInFlight;
     private Point _lastPointer;
     private DispatcherTimer? _renderTimer;
 
@@ -178,11 +179,20 @@ internal sealed class MainWindow : Window
 
     private async void OnSavePoint(object? sender, RoutedEventArgs e)
     {
-        _session.Scene.Camera = _viewport.CaptureCameraState();
-        _session.PersistWorkingCopy();
-        await _session.SavePointAsync("Manual save");
-        _sound.Play();
-        RefreshUi();
+        if (Interlocked.CompareExchange(ref _saveInFlight, 1, 0) != 0)
+            return;
+
+        try
+        {
+            _session.Scene.Camera = _viewport.CaptureCameraState();
+            await _session.SavePointAsync("Manual save");
+            _sound.Play();
+            RefreshUi();
+        }
+        finally
+        {
+            Interlocked.Exchange(ref _saveInFlight, 0);
+        }
     }
 
     private async void OnRestore(object? sender, RoutedEventArgs e)

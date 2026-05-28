@@ -1,3 +1,4 @@
+using System.IO;
 using System.IO.Abstractions;
 using System.IO.Compression;
 using Novolis.Snapshots;
@@ -82,7 +83,11 @@ public sealed class ProjectTimeline
                 var relative = GetRelativePath(project.Root.FullName, file);
                 var entry = archive.CreateEntry(relative.Replace('\\', '/'), CompressionLevel.Optimal);
                 await using var entryStream = entry.Open();
-                await using var source = _fileSystem.File.OpenRead(file);
+                await using var source = _fileSystem.FileStream.New(
+                    file,
+                    FileMode.Open,
+                    FileAccess.Read,
+                    FileShare.ReadWrite | FileShare.Delete);
                 await source.CopyToAsync(entryStream, cancellationToken).ConfigureAwait(false);
             }
         }

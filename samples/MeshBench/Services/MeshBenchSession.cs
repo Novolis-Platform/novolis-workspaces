@@ -13,6 +13,7 @@ namespace MeshBench.Services;
 
 internal sealed class MeshBenchSession
 {
+    private readonly SemaphoreSlim _saveGate = new(1, 1);
     private readonly WorkspaceFileSystemService _workspaces;
     private readonly MeshSceneStore _scenes;
     private readonly TimelineTreeProjector<ZipSnapshotRef> _projector = new();
@@ -62,13 +63,21 @@ internal sealed class MeshBenchSession
         if (Timeline is null || Workspace is null || Project is null)
             throw new InvalidOperationException("Workspace is not open.");
 
-        _scenes.Save(Project, Scene);
-        var node = await Timeline.SavePointAsync(
-            Workspace,
-            new SavePointRequest(label ?? "Manual save", SnapshotKinds.Manual),
-            cancellationToken).ConfigureAwait(false);
-        await RefreshTimelineAsync(cancellationToken).ConfigureAwait(false);
-        return node;
+        await _saveGate.WaitAsync(cancellationToken).ConfigureAwait(false);
+        try
+        {
+            _scenes.Save(Project, Scene);
+            var node = await Timeline.SavePointAsync(
+                Workspace,
+                new SavePointRequest(label ?? "Manual save", SnapshotKinds.Manual),
+                cancellationToken).ConfigureAwait(false);
+            await RefreshTimelineAsync(cancellationToken).ConfigureAwait(false);
+            return node;
+        }
+        finally
+        {
+            _saveGate.Release();
+        }
     }
 
     public async ValueTask RestoreAsync(TimelineNodeId nodeId, CancellationToken cancellationToken = default)
@@ -92,18 +101,7 @@ internal sealed class MeshBenchSession
         await RefreshTimelineAsync(cancellationToken).ConfigureAwait(false);
     }
 
-    public void ApplyScene(MeshSceneDocument document)
-    {
-        Scene = document;
-        if (Project is not null)
-            _scenes.Save(Project, Scene);
-    }
-
-    public void PersistWorkingCopy()
-    {
-        if (Project is not null)
-            _scenes.Save(Project, Scene);
-    }
+    public void ApplyScene(MeshSceneDocument document) => Scene = document;
 
     private async ValueTask EnsureProjectAsync(CancellationToken cancellationToken)
     {
