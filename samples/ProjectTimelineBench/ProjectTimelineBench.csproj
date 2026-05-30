@@ -1,0 +1,19 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+    <RootNamespace>ProjectTimelineBench</RootNamespace>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+  </PropertyGroup>
+  <ItemGroup>
+    <PackageReference Include="System.IO.Abstractions" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\src\Novolis.Snapshots.Abstractions\Novolis.Snapshots.Abstractions.csproj" />
+    <ProjectReference Include="..\..\src\Novolis.Timeline.Abstractions\Novolis.Timeline.Abstractions.csproj" />
+    <ProjectReference Include="..\..\src\Novolis.Timeline.FileSystem\Novolis.Timeline.FileSystem.csproj" />
+    <ProjectReference Include="..\..\src\Novolis.Workspaces.Abstractions\Novolis.Workspaces.Abstractions.csproj" />
+    <ProjectReference Include="..\..\src\Novolis.Workspaces.FileSystem\Novolis.Workspaces.FileSystem.csproj" />
+    <ProjectReference Include="..\..\src\Novolis.Workspaces.Projects.Timeline\Novolis.Workspaces.Projects.Timeline.csproj" />
+  </ItemGroup>
+</Project>

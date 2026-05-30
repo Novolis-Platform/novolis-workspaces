@@ -7,6 +7,7 @@
     <Description>Tree and flat-row projections for timeline UI (Avalonia, Blazor, WPF).</Description>
   </PropertyGroup>
   <ItemGroup>
+    <ProjectReference Include="..\Novolis.Snapshots.Abstractions\Novolis.Snapshots.Abstractions.csproj" />
     <ProjectReference Include="..\Novolis.Timeline.Abstractions\Novolis.Timeline.Abstractions.csproj" />
   </ItemGroup>
 </Project>

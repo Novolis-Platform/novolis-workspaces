@@ -21,5 +21,6 @@
   <Folder Name="/samples/">
     <Project Path="samples/MinimalWorkspaceTimeline/MinimalWorkspaceTimeline.csproj" />
     <Project Path="samples/MeshBench/MeshBench.csproj" />
+    <Project Path="samples/ProjectTimelineBench/ProjectTimelineBench.csproj" />
   </Folder>
 </Solution>
