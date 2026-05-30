@@ -5,6 +5,7 @@ using Novolis.Timeline.FileSystem;
 using Novolis.Workspaces;
 using Novolis.Workspaces.FileSystem;
 using Novolis.Workspaces.Projects.Timeline;
+using Novolis.Workspaces.Timeline;
 
 var fileSystem = new FileSystem();
 var root = Path.Combine(Path.GetTempPath(), "Novolis", "ProjectTimelineBench", Guid.NewGuid().ToString("N"));

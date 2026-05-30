@@ -15,5 +15,6 @@
     <ProjectReference Include="..\..\src\Novolis.Workspaces.Abstractions\Novolis.Workspaces.Abstractions.csproj" />
     <ProjectReference Include="..\..\src\Novolis.Workspaces.FileSystem\Novolis.Workspaces.FileSystem.csproj" />
     <ProjectReference Include="..\..\src\Novolis.Workspaces.Projects.Timeline\Novolis.Workspaces.Projects.Timeline.csproj" />
+    <ProjectReference Include="..\..\src\Novolis.Workspaces.Timeline\Novolis.Workspaces.Timeline.csproj" />
   </ItemGroup>
 </Project>
