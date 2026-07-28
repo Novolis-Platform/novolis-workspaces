@@ -15,7 +15,7 @@
     <PackageReference Include="Novolis.Avalonia.Rendering" />
     <PackageReference Include="Novolis.Audio.Core" />
     <PackageReference Include="Novolis.Audio.Playback" />
-    <PackageReference Include="Novolis.Audio.Host.NAudio" />
+    <PackageReference Include="Novolis.Audio.Output.NAudio" />
     <PackageReference Include="Novolis.Rendering.Backends.Cpu" />
     <PackageReference Include="Novolis.Rendering.Compile" />
     <PackageReference Include="Novolis.Rendering.DependencyInjection" />

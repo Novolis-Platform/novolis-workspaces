@@ -18,7 +18,7 @@
     <PackageVersion Include="Novolis.Avalonia.Rendering" Version="2026.1.*" />
     <PackageVersion Include="Novolis.Audio.Core" Version="2026.1.*" />
     <PackageVersion Include="Novolis.Audio.Playback" Version="2026.1.*" />
-    <PackageVersion Include="Novolis.Audio.Host.NAudio" Version="2026.1.*" />
+    <PackageVersion Include="Novolis.Audio.Output.NAudio" Version="2026.1.*" />
     <PackageVersion Include="Novolis.Rendering.Backends.Cpu" Version="2026.1.*" />
     <PackageVersion Include="Novolis.Rendering.Compile" Version="2026.1.*" />
     <PackageVersion Include="Novolis.Rendering.DependencyInjection" Version="2026.1.*" />
