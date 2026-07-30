@@ -24,6 +24,7 @@
     <PackageReference Include="Novolis.Rendering.Presentation.Silk" />
     <PackageReference Include="Novolis.Rendering.Runtime" />
     <PackageReference Include="Novolis.Rendering.Scene" />
+    <PackageReference Include="Novolis.Simulation.View" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\..\src\Novolis.Snapshots.Abstractions\Novolis.Snapshots.Abstractions.csproj" />

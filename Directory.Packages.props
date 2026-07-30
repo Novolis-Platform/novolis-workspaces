@@ -27,5 +27,6 @@
     <PackageVersion Include="Novolis.Rendering.Presentation.Silk" Version="2026.1.*" />
     <PackageVersion Include="Novolis.Rendering.Runtime" Version="2026.1.*" />
     <PackageVersion Include="Novolis.Rendering.Scene" Version="2026.1.*" />
+    <PackageVersion Include="Novolis.Simulation.View" Version="2026.1.*" />
   </ItemGroup>
 </Project>

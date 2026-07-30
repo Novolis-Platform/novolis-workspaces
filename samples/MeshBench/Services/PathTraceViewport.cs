@@ -3,7 +3,7 @@ using Novolis.Avalonia.Rendering;
 using Microsoft.Extensions.DependencyInjection;
 using Novolis.Rendering.DependencyInjection;
 using Novolis.Rendering.PathTrace.Demos;
-using Novolis.Rendering.Presentation.Silk;
+using Novolis.Simulation.View;
 using Novolis.Rendering.Runtime;
 
 namespace MeshBench.Services;
@@ -13,7 +13,7 @@ internal sealed class PathTraceViewport : IDisposable
     private readonly IRayTracingBackend _backend;
     private readonly PathTraceDisplayBuffer _display = new();
     private readonly PathTraceBackgroundWorker _worker;
-    private readonly SilkOrbitCamera _orbit = new() { Target = new Vector3(0f, 0.45f, 0f), Distance = 4.5f };
+    private readonly OrbitCameraRig _orbit = new() { Target = new Vector3(0f, 0.45f, 0f), Distance = 4.5f };
     private Rgba32FrameControl? _control;
     private int _width;
     private int _height;
@@ -28,7 +28,7 @@ internal sealed class PathTraceViewport : IDisposable
         _worker = new PathTraceBackgroundWorker(_backend, _display);
     }
 
-    public SilkOrbitCamera Orbit => _orbit;
+    public OrbitCameraRig Orbit => _orbit;
 
     public int DisplayedSamples => _display.DisplayedSampleCount;
 
