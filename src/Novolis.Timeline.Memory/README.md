@@ -1,4 +1,44 @@
 # Novolis.Timeline.Memory
 
-Part of [novolis-workspaces](https://github.com/Novolis-Platform/novolis-workspaces). See repository [design.md](https://github.com/Novolis-Platform/novolis-workspaces/blob/main/docs/design.md).
+Process-local **`ITimeline<TSnapshotRef>`** backed by concurrent dictionaries. Creates a `main` branch on construction. Single-writer usage is recommended.
 
+## Install
+
+```bash
+dotnet add package Novolis.Timeline.Memory
+```
+
+Depends on `Novolis.Timeline.Abstractions`.
+
+## Quick start
+
+```csharp
+using Novolis.Snapshots;
+using Novolis.Timeline;
+using Novolis.Timeline.Memory;
+
+var timeline = new InMemoryTimeline<ZipSnapshotRef>();
+
+var node = await timeline.AddAsync(
+    new ZipSnapshotRef("abc", "ab/abc.zip"),
+    new TimelineMetadata("Checkpoint", TimelineKinds.SavePoint, []));
+
+var nodes = await timeline.GetNodesAsync();
+var head = await timeline.GetHeadAsync();
+```
+
+## API
+
+| Type | Role |
+|------|------|
+| `InMemoryTimeline<TSnapshotRef>` | Full `ITimeline<TSnapshotRef>` implementation |
+
+## Related
+
+| Package | Role |
+|---------|------|
+| `Novolis.Timeline.Abstractions` | `ITimeline`, node/branch models |
+| `Novolis.Timeline.FileSystem` | Durable JSON persistence |
+| `Novolis.Snapshots.Memory` | Matching in-process snapshot store |
+| `Novolis.Timeline.Presentation` | UI tree projection |
+| `Novolis.Workspaces.Timeline` | Workspace-level save points |

@@ -8,19 +8,37 @@ Reusable .NET libraries for editor and studio apps:
 
 Adapters compose the three (`Novolis.Workspaces.Snapshots`, `Novolis.Workspaces.Timeline`, `Novolis.Workspaces.Projects.Timeline`).
 
+## Install
+
+`Novolis.*` packages publish to [GitHub Packages](https://github.com/orgs/Novolis-Platform/packages) (`2026.1.*`). Third-party dependencies resolve from [nuget.org](https://www.nuget.org).
+
+```bash
+dotnet add package Novolis.Workspaces.Timeline
+dotnet add package Novolis.Timeline.Presentation
+```
+
+Ensure your `nuget.config` includes the Novolis-Platform GitHub feed and credentials for GPR restore.
+
 ## Packages
 
-| Package | Role |
-|---------|------|
-| `Novolis.Workspaces.Abstractions` | `IWorkspace`, `IProject`, manifests |
-| `Novolis.Workspaces.FileSystem` | On-disk layout, open/create |
-| `Novolis.Snapshots.Abstractions` | `ISnapshotStore`, refs |
-| `Novolis.Snapshots.Memory` / `.Json` / `.FileSystem` / `.Zip` | Snapshot backends |
-| `Novolis.Timeline.Abstractions` | `ITimeline`, branches |
-| `Novolis.Timeline.Memory` / `.FileSystem` / `.Presentation` | Timeline storage and UI projection |
-| `Novolis.Workspaces.Snapshots` | Zip workspace snapshots + policy |
-| `Novolis.Workspaces.Timeline` | Save points / restore points |
-| `Novolis.Workspaces.Projects.Timeline` | Project-scoped timeline |
+| Package | Role | README |
+|---------|------|--------|
+| `Novolis.Workspaces.Abstractions` | `IWorkspace`, `IProject`, manifests | [README](src/Novolis.Workspaces.Abstractions/README.md) |
+| `Novolis.Workspaces.FileSystem` | On-disk layout, open/create | [README](src/Novolis.Workspaces.FileSystem/README.md) |
+| `Novolis.Snapshots.Abstractions` | `ISnapshotStore`, refs | [README](src/Novolis.Snapshots.Abstractions/README.md) |
+| `Novolis.Snapshots.Memory` | In-process snapshot store | [README](src/Novolis.Snapshots.Memory/README.md) |
+| `Novolis.Snapshots.Json` | JSON state serializer | [README](src/Novolis.Snapshots.Json/README.md) |
+| `Novolis.Snapshots.FileSystem` | Blob snapshot backend | [README](src/Novolis.Snapshots.FileSystem/README.md) |
+| `Novolis.Snapshots.Zip` | Zip snapshot backend | [README](src/Novolis.Snapshots.Zip/README.md) |
+| `Novolis.Timeline.Abstractions` | `ITimeline`, branches | [README](src/Novolis.Timeline.Abstractions/README.md) |
+| `Novolis.Timeline.Memory` | In-memory timeline | [README](src/Novolis.Timeline.Memory/README.md) |
+| `Novolis.Timeline.FileSystem` | JSON timeline persistence | [README](src/Novolis.Timeline.FileSystem/README.md) |
+| `Novolis.Timeline.Presentation` | Tree/git-graph UI projection | [README](src/Novolis.Timeline.Presentation/README.md) |
+| `Novolis.Workspaces.Snapshots` | Zip workspace snapshots + policy | [README](src/Novolis.Workspaces.Snapshots/README.md) |
+| `Novolis.Workspaces.Timeline` | Save points / restore points | [README](src/Novolis.Workspaces.Timeline/README.md) |
+| `Novolis.Workspaces.Projects.Timeline` | Project-scoped timeline | [README](src/Novolis.Workspaces.Projects.Timeline/README.md) |
+
+Typical stack for a studio app: `Workspaces.FileSystem` + `Workspaces.Timeline` + `Timeline.Presentation`.
 
 ## Docs
 
