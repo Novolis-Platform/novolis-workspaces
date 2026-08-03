@@ -45,18 +45,18 @@ Typical stack for a studio app: `Workspaces.FileSystem` + `Workspaces.Timeline` 
 - [design.md](docs/design.md) — boundaries and on-disk layout
 - [getting-started.md](docs/getting-started.md) — quick start
 
-## Samples
+## Dogfood samples
 
-**Console timeline walkthrough:**
+Console timeline walkthrough:
 
-```bash
-dotnet run --project samples/MinimalWorkspaceTimeline
+```powershell
+dotnet run --project d:\novolis\novolis-dogfooding\apps\workspaces\MinimalWorkspaceTimeline -p:NovolisUseProjectReferences=true
 ```
 
-**MeshBench** — Avalonia mini CAD (boxes/spheres, path-traced viewport, workspace save points + timeline, save chime):
+**MeshBench** (Avalonia mini CAD — boxes/spheres, path-traced viewport, workspace save points + timeline):
 
-```bash
-dotnet run --project samples/MeshBench
+```powershell
+dotnet run --project d:\novolis\novolis-dogfooding\apps\rendering\MeshBench -p:NovolisUseProjectReferences=true
 ```
 
 Workspace files default to `%LocalAppData%/Novolis/MeshBench/default-workspace`.

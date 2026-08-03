@@ -40,4 +40,4 @@ var projector = new TimelineTreeProjector<ZipSnapshotRef>();
 var rows = projector.ToRows(await timeline.GetNodesAsync(), await timeline.GetBranchesAsync(), await timeline.GetHeadAsync());
 ```
 
-See `samples/MinimalWorkspaceTimeline` for a full console walkthrough.
+See `novolis-dogfooding/apps/workspaces/MinimalWorkspaceTimeline` for a full console walkthrough.
