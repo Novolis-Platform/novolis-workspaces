@@ -1,3 +1,11 @@
+<!-- novolis-pkg-brand:start -->
+<p align="center">
+  <a href="https://github.com/Novolis-Platform/novolis-workspaces">
+    <img src="https://raw.githubusercontent.com/Novolis-Platform/.github/main/brand/logo-icon.svg" width="72" alt="Novolis"/>
+  </a>
+</p>
+<!-- novolis-pkg-brand:end -->
+
 # Novolis.Timeline.Presentation
 
 Projects storage timeline nodes into **UI tree models** and optional **git-log-style graph rows** for virtualized lists and Avalonia/WPF hosts.
@@ -56,3 +64,4 @@ var graphRows = GitGraphTimelineBuilder.Build(tree);
 ## Notes
 
 Used by **MeshBench** sample for save-point UI. See [getting-started.md](../../docs/getting-started.md).
+

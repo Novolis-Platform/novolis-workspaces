@@ -1,3 +1,11 @@
+<!-- novolis-pkg-brand:start -->
+<p align="center">
+  <a href="https://github.com/Novolis-Platform/novolis-workspaces">
+    <img src="https://raw.githubusercontent.com/Novolis-Platform/.github/main/brand/logo-icon.svg" width="72" alt="Novolis"/>
+  </a>
+</p>
+<!-- novolis-pkg-brand:end -->
+
 # Novolis.Workspaces.Abstractions
 
 Core contracts for **editor/studio workspace containers**: a workspace holds projects, manifests, and well-known folder semantics. Implementations live in `Novolis.Workspaces.FileSystem`.
@@ -49,3 +57,4 @@ foreach (var project in workspace.Projects)
 ## Notes
 
 On-disk layout: [design.md](../../docs/design.md). Distinct from `Novolis.IO.Workspace` (storage file root).
+

@@ -1,3 +1,11 @@
+<!-- novolis-pkg-brand:start -->
+<p align="center">
+  <a href="https://github.com/Novolis-Platform/novolis-workspaces">
+    <img src="https://raw.githubusercontent.com/Novolis-Platform/.github/main/brand/logo-icon.svg" width="72" alt="Novolis"/>
+  </a>
+</p>
+<!-- novolis-pkg-brand:end -->
+
 # Novolis.Timeline.FileSystem
 
 Disk-backed **`ITimeline<TSnapshotRef>`** persisting `branches.json`, `head.json`, and per-node files under `nodes/{nodeId}.json`.
@@ -48,3 +56,4 @@ Use `TimelineJsonSerializerOptions.Create()` for consistent JSON options (camelC
 ## Notes
 
 On-disk paths: [design.md](../../docs/design.md).
+

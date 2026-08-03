@@ -1,3 +1,11 @@
+<!-- novolis-pkg-brand:start -->
+<p align="center">
+  <a href="https://github.com/Novolis-Platform/novolis-workspaces">
+    <img src="https://raw.githubusercontent.com/Novolis-Platform/.github/main/brand/logo-icon.svg" width="72" alt="Novolis"/>
+  </a>
+</p>
+<!-- novolis-pkg-brand:end -->
+
 # Novolis.Snapshots.Memory
 
 In-process **`ISnapshotStore`** that clones state via an `IStateSerializer` round-trip into a `ConcurrentDictionary`. Useful for tests and ephemeral undo stacks.
@@ -43,3 +51,4 @@ var restored = await store.LoadAsync(snapshot);
 | `Novolis.Snapshots.FileSystem` | Durable blob backend |
 | `Novolis.Snapshots.Zip` | Zip archive backend |
 | `Novolis.Timeline.Memory` | In-memory timeline over snapshot refs |
+

@@ -1,3 +1,11 @@
+<!-- novolis-pkg-brand:start -->
+<p align="center">
+  <a href="https://github.com/Novolis-Platform/novolis-workspaces">
+    <img src="https://raw.githubusercontent.com/Novolis-Platform/.github/main/brand/logo-icon.svg" width="72" alt="Novolis"/>
+  </a>
+</p>
+<!-- novolis-pkg-brand:end -->
+
 # Novolis.Timeline.Memory
 
 Process-local **`ITimeline<TSnapshotRef>`** backed by concurrent dictionaries. Creates a `main` branch on construction. Single-writer usage is recommended.
@@ -42,3 +50,4 @@ var head = await timeline.GetHeadAsync();
 | `Novolis.Snapshots.Memory` | Matching in-process snapshot store |
 | `Novolis.Timeline.Presentation` | UI tree projection |
 | `Novolis.Workspaces.Timeline` | Workspace-level save points |
+

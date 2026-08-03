@@ -1,3 +1,11 @@
+<!-- novolis-pkg-brand:start -->
+<p align="center">
+  <a href="https://github.com/Novolis-Platform/novolis-workspaces">
+    <img src="https://raw.githubusercontent.com/Novolis-Platform/.github/main/brand/logo-icon.svg" width="72" alt="Novolis"/>
+  </a>
+</p>
+<!-- novolis-pkg-brand:end -->
+
 # Novolis.Snapshots.Json
 
 JSON **`IStateSerializer<TState>`** using `System.Text.Json`. Deserializes into a temporary instance, then copies public writable properties (or dictionary entries) into the target object.
@@ -41,3 +49,4 @@ Constructor accepts optional `JsonSerializerOptions` (default: compact JSON).
 | `Novolis.Snapshots.FileSystem` | Persists serializer output to disk |
 | `Novolis.Snapshots.Zip` | Embeds serializer output in zip entries |
 | `Novolis.Timeline.FileSystem` | Reuses JSON options for timeline persistence |
+

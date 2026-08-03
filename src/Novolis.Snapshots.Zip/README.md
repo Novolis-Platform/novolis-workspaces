@@ -1,3 +1,11 @@
+<!-- novolis-pkg-brand:start -->
+<p align="center">
+  <a href="https://github.com/Novolis-Platform/novolis-workspaces">
+    <img src="https://raw.githubusercontent.com/Novolis-Platform/.github/main/brand/logo-icon.svg" width="72" alt="Novolis"/>
+  </a>
+</p>
+<!-- novolis-pkg-brand:end -->
+
 # Novolis.Snapshots.Zip
 
 Zip archive **`ISnapshotStore`** that writes `{objectId}.zip` under a sharded root. Each archive contains `state.dat` (serialized state) and `manifest.json` (label, kind, properties from `SnapshotRequest`).
@@ -50,3 +58,4 @@ Entry names: `ZipSnapshotStore<TState>.StateEntryName` (`state.dat`), `ManifestE
 ## Notes
 
 Workspace-level zip snapshots (full tree, not single-state serialization) are in `Novolis.Workspaces.Snapshots`. See [design.md](../../docs/design.md).
+

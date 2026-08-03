@@ -1,3 +1,11 @@
+<!-- novolis-pkg-brand:start -->
+<p align="center">
+  <a href="https://github.com/Novolis-Platform/novolis-workspaces">
+    <img src="https://raw.githubusercontent.com/Novolis-Platform/.github/main/brand/logo-icon.svg" width="72" alt="Novolis"/>
+  </a>
+</p>
+<!-- novolis-pkg-brand:end -->
+
 # Novolis.Workspaces.Snapshots
 
 Captures an entire **`IWorkspace`** tree as zip archives using **`IWorkspaceSnapshotPolicy`** include/exclude rules. Timeline data under `.novolis/timeline/` is excluded from capture and preserved across restore.
@@ -51,3 +59,4 @@ Default policy excludes `.novolis/timeline/`, `cache/`, `temp/`, `outputs/`, and
 ## Notes
 
 Restore backs up and restores the timeline folder separately so history survives workspace rollback. See [design.md](../../docs/design.md).
+

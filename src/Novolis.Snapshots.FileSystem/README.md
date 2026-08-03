@@ -1,3 +1,11 @@
+<!-- novolis-pkg-brand:start -->
+<p align="center">
+  <a href="https://github.com/Novolis-Platform/novolis-workspaces">
+    <img src="https://raw.githubusercontent.com/Novolis-Platform/.github/main/brand/logo-icon.svg" width="72" alt="Novolis"/>
+  </a>
+</p>
+<!-- novolis-pkg-brand:end -->
+
 # Novolis.Snapshots.FileSystem
 
 File-system **`ISnapshotStore`** that writes serialized state blobs under a root directory (`{hash-prefix}/{guid}.dat`) and returns a `FileSnapshotRef` with a SHA-256 content id.
@@ -44,3 +52,4 @@ Constructor: `(IFileSystem fileSystem, IDirectoryInfo root, IStateSerializer<TSt
 | `Novolis.Snapshots.Zip` | Zip archive alternative with manifest |
 | `Novolis.Snapshots.Memory` | Non-durable test backend |
 | `Novolis.Timeline.FileSystem` | Timeline nodes referencing snapshot refs |
+

@@ -1,3 +1,11 @@
+<!-- novolis-pkg-brand:start -->
+<p align="center">
+  <a href="https://github.com/Novolis-Platform/novolis-workspaces">
+    <img src="https://raw.githubusercontent.com/Novolis-Platform/.github/main/brand/logo-icon.svg" width="72" alt="Novolis"/>
+  </a>
+</p>
+<!-- novolis-pkg-brand:end -->
+
 # Novolis.Snapshots.Abstractions
 
 Core contracts for **save-game style state capture**: serialize application state, persist opaque snapshots, and restore into a live instance. Backends (`Memory`, `FileSystem`, `Zip`) and serializers (`Json`) live in sibling packages.
@@ -51,3 +59,4 @@ Implement `IStateSerializer<TState>` (or use `Novolis.Snapshots.Json`) to plug i
 ## Notes
 
 On-disk layout and boundaries: [design.md](../../docs/design.md).
+

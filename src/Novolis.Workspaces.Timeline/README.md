@@ -1,3 +1,11 @@
+<!-- novolis-pkg-brand:start -->
+<p align="center">
+  <a href="https://github.com/Novolis-Platform/novolis-workspaces">
+    <img src="https://raw.githubusercontent.com/Novolis-Platform/.github/main/brand/logo-icon.svg" width="72" alt="Novolis"/>
+  </a>
+</p>
+<!-- novolis-pkg-brand:end -->
+
 # Novolis.Workspaces.Timeline
 
 Composes **workspace zip snapshots** with a **branchable timeline**: save points capture the workspace tree and append a timeline node; restore points roll back disk state (with a safety save first).
@@ -55,3 +63,4 @@ await workspaceTimeline.SavePointAsync(
 ## Notes
 
 End-to-end walkthrough: [getting-started.md](../../docs/getting-started.md).
+

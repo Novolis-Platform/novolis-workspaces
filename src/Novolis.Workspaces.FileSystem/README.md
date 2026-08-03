@@ -1,3 +1,11 @@
+<!-- novolis-pkg-brand:start -->
+<p align="center">
+  <a href="https://github.com/Novolis-Platform/novolis-workspaces">
+    <img src="https://raw.githubusercontent.com/Novolis-Platform/.github/main/brand/logo-icon.svg" width="72" alt="Novolis"/>
+  </a>
+</p>
+<!-- novolis-pkg-brand:end -->
+
 # Novolis.Workspaces.FileSystem
 
 Creates and opens **disk-backed workspaces** with the standard `.novolis/` layout, project folders, and JSON manifests.
@@ -49,3 +57,4 @@ var reopened = await service.OpenAsync(workspace.Root.FullName);
 ## Notes
 
 Folder layout and include rules: [design.md](../../docs/design.md).
+

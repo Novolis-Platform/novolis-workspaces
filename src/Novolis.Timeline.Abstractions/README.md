@@ -1,3 +1,11 @@
+<!-- novolis-pkg-brand:start -->
+<p align="center">
+  <a href="https://github.com/Novolis-Platform/novolis-workspaces">
+    <img src="https://raw.githubusercontent.com/Novolis-Platform/.github/main/brand/logo-icon.svg" width="72" alt="Novolis"/>
+  </a>
+</p>
+<!-- novolis-pkg-brand:end -->
+
 # Novolis.Timeline.Abstractions
 
 Contracts for a **branchable history graph** over snapshot references. Not version control: no merge, rebase, remotes, or conflict resolution.
@@ -51,3 +59,4 @@ await timeline.MoveHeadAsync(branch.Id, node.Id);
 ## Notes
 
 Boundaries vs git and replay: [design.md](../../docs/design.md).
+

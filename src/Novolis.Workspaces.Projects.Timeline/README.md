@@ -1,3 +1,11 @@
+<!-- novolis-pkg-brand:start -->
+<p align="center">
+  <a href="https://github.com/Novolis-Platform/novolis-workspaces">
+    <img src="https://raw.githubusercontent.com/Novolis-Platform/.github/main/brand/logo-icon.svg" width="72" alt="Novolis"/>
+  </a>
+</p>
+<!-- novolis-pkg-brand:end -->
+
 # Novolis.Workspaces.Projects.Timeline
 
 **Project-scoped** save and restore points: zips one `IProject` subtree (via `IProjectSnapshotPolicy`) and records nodes on a shared workspace timeline.
@@ -55,3 +63,4 @@ Project zips are stored under `projects/{projectId-prefix}/{objectId}.zip` in th
 ## Notes
 
 Use when multiple projects in one workspace need independent rollback without restoring the entire tree. See [design.md](../../docs/design.md).
+
