@@ -1,6 +1,3 @@
-using Microsoft.Build.Evaluation;
-using Microsoft.Build.Exceptions;
-
 namespace Novolis.Workspaces.DotNet.MSBuild;
 
 /// <summary>An effective MSBuild item together with its source-project provenance.</summary>
@@ -51,27 +48,10 @@ public sealed class MsBuildProjectEvaluator
 
         try
         {
-            using var collection = new ProjectCollection(context.ToGlobalProperties()
-                .ToDictionary(pair => pair.Key, pair => pair.Value, StringComparer.OrdinalIgnoreCase));
-            var project = collection.LoadProject(fullPath);
-            var properties = project.AllEvaluatedProperties
-                .GroupBy(property => property.Name, StringComparer.OrdinalIgnoreCase)
-                .ToDictionary(group => group.Key, group => group.Last().EvaluatedValue, StringComparer.OrdinalIgnoreCase);
-            var items = project.AllEvaluatedItems
-                .Select(item => new EvaluatedProjectItem(
-                    item.ItemType,
-                    item.EvaluatedInclude,
-                    item.Metadata.ToDictionary(metadata => metadata.Name, metadata => metadata.EvaluatedValue, StringComparer.OrdinalIgnoreCase),
-                    item.Xml?.ContainingProject?.FullPath))
-                .ToArray();
-            var imports = project.Imports
-                .Select(import => import.ImportedProject.FullPath)
-                .Distinct(StringComparer.OrdinalIgnoreCase)
-                .ToArray();
-
-            return ValueTask.FromResult(new EvaluatedProject(fullPath, context, properties, items, imports, diagnostics));
+            MsBuildHostRegistration.EnsureRegistered();
+            return ValueTask.FromResult(MsBuildProjectEvaluationCore.Evaluate(fullPath, context, diagnostics));
         }
-        catch (Exception exception) when (exception is InvalidProjectFileException or IOException or UnauthorizedAccessException)
+        catch (Exception exception) when (exception is not OperationCanceledException)
         {
             diagnostics.Add(new WorkspaceDiagnostic(
                 "NWS2001",
@@ -87,4 +67,5 @@ public sealed class MsBuildProjectEvaluator
                 diagnostics));
         }
     }
+
 }

@@ -24,6 +24,7 @@
     <ProjectReference Include="..\..\src\Novolis.Workspaces.DotNet.Slnx\Novolis.Workspaces.DotNet.Slnx.csproj" />
     <ProjectReference Include="..\..\src\Novolis.Workspaces.DotNet.MSBuild\Novolis.Workspaces.DotNet.MSBuild.csproj" />
     <ProjectReference Include="..\..\src\Novolis.Workspaces.DotNet.Indexing\Novolis.Workspaces.DotNet.Indexing.csproj" />
+    <ProjectReference Include="..\..\src\Novolis.Workspaces.DotNet.Roslyn\Novolis.Workspaces.DotNet.Roslyn.csproj" />
     <ProjectReference Include="..\..\src\Novolis.Workspaces.Snapshots\Novolis.Workspaces.Snapshots.csproj" />
     <ProjectReference Include="..\..\src\Novolis.Workspaces.Timeline\Novolis.Workspaces.Timeline.csproj" />
   </ItemGroup>

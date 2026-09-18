@@ -1,6 +1,6 @@
-using Microsoft.Build.Locator;
 using Microsoft.CodeAnalysis;
 using Microsoft.CodeAnalysis.MSBuild;
+using Novolis.Workspaces.DotNet.MSBuild;
 
 namespace Novolis.Workspaces.DotNet.Roslyn;
 
@@ -22,8 +22,6 @@ public sealed record SemanticProject(
 /// <summary>Loads an MSBuild project through Roslyn and emits portable semantic facts.</summary>
 public sealed class RoslynSemanticProjectLoader
 {
-    private static readonly object RegistrationGate = new();
-
     public async ValueTask<SemanticProject> LoadAsync(
         string projectPath,
         EvaluationContext context,
@@ -46,7 +44,7 @@ public sealed class RoslynSemanticProjectLoader
 
         try
         {
-            EnsureMsBuildRegistered();
+            MsBuildHostRegistration.EnsureRegistered();
             using var workspace = MSBuildWorkspace.Create(context.ToGlobalProperties()
                 .ToDictionary(pair => pair.Key, pair => pair.Value, StringComparer.OrdinalIgnoreCase));
             using var registration = workspace.RegisterWorkspaceFailedHandler(args => diagnostics.Add(new WorkspaceDiagnostic(
@@ -91,15 +89,6 @@ public sealed class RoslynSemanticProjectLoader
                 WorkspaceDiagnosticSeverity.Error,
                 fullPath));
             return new SemanticProject(fullPath, [], [], diagnostics);
-        }
-    }
-
-    private static void EnsureMsBuildRegistered()
-    {
-        lock (RegistrationGate)
-        {
-            if (!MSBuildLocator.IsRegistered)
-                MSBuildLocator.RegisterDefaults();
         }
     }
 

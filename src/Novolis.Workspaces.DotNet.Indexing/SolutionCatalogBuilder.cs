@@ -62,8 +62,9 @@ public sealed class SolutionCatalogBuilder
                 .ConfigureAwait(false);
             diagnostics.AddRange(evaluation.Diagnostics);
 
-            var semantic = await _semanticLoader.LoadAsync(project.FullPath, context, cancellationToken)
-                .ConfigureAwait(false);
+            var semantic = context.AllowDesignTimeBuilds
+                ? await _semanticLoader.LoadAsync(project.FullPath, context, cancellationToken).ConfigureAwait(false)
+                : new SemanticProject(project.FullPath, [], [], []);
             diagnostics.AddRange(semantic.Diagnostics);
             projects.Add(new SolutionCatalogProject(project, evaluation, semantic));
         }

@@ -1,6 +1,7 @@
 using Novolis.Workspaces.DotNet;
 using Novolis.Workspaces.DotNet.Indexing;
 using Novolis.Workspaces.DotNet.MSBuild;
+using Novolis.Workspaces.DotNet.Roslyn;
 using Novolis.Workspaces.DotNet.Slnx;
 using TUnit.Core;
 
@@ -71,6 +72,38 @@ public sealed class SlnxSolutionReaderTests
             await Assert.That(catalog.Provenance.SolutionPath).IsEqualTo(solutionPath);
             await Assert.That(catalog.Projects).Count().IsEqualTo(0);
             await Assert.That(catalog.SnapshotId.Length).IsEqualTo(64);
+        }
+        finally
+        {
+            Directory.Delete(rootPath, recursive: true);
+        }
+    }
+
+    [Test]
+    public async Task LoadAsync_ProjectsPublicCSharpTypesWhenDesignTimeLoadingIsAuthorized()
+    {
+        var rootPath = Path.Combine(Path.GetTempPath(), "novolis-roslyn-" + Guid.NewGuid().ToString("N"));
+        Directory.CreateDirectory(rootPath);
+        try
+        {
+            var projectPath = Path.Combine(rootPath, "Demo.csproj");
+            await File.WriteAllTextAsync(projectPath, """
+                <Project Sdk="Microsoft.NET.Sdk">
+                  <PropertyGroup>
+                    <TargetFramework>net10.0</TargetFramework>
+                  </PropertyGroup>
+                </Project>
+                """);
+            await File.WriteAllTextAsync(
+                Path.Combine(rootPath, "Greeting.cs"),
+                "namespace Novolis.Sample; public sealed class Greeting { }");
+
+            var semantic = await new RoslynSemanticProjectLoader().LoadAsync(
+                projectPath,
+                new EvaluationContext(AllowDesignTimeBuilds: true));
+
+            await Assert.That(semantic.Types.Any(type => type.MetadataName == "Novolis.Sample.Greeting")).IsTrue();
+            await Assert.That(semantic.Diagnostics.Any(diagnostic => diagnostic.Severity == WorkspaceDiagnosticSeverity.Error)).IsFalse();
         }
         finally
         {
