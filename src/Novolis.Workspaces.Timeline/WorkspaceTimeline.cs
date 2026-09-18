@@ -7,18 +7,18 @@ namespace Novolis.Workspaces.Timeline;
 public sealed class WorkspaceTimeline
 {
     private readonly ITimeline<ZipSnapshotRef> _timeline;
-    private readonly ISnapshotStore<IWorkspace, ZipSnapshotRef> _snapshots;
+    private readonly ISnapshotStore<IProjectWorkspace, ZipSnapshotRef> _snapshots;
 
     public WorkspaceTimeline(
         ITimeline<ZipSnapshotRef> timeline,
-        ISnapshotStore<IWorkspace, ZipSnapshotRef> snapshots)
+        ISnapshotStore<IProjectWorkspace, ZipSnapshotRef> snapshots)
     {
         _timeline = timeline;
         _snapshots = snapshots;
     }
 
     public async ValueTask<TimelineNode<ZipSnapshotRef>> SavePointAsync(
-        IWorkspace workspace,
+        IProjectWorkspace workspace,
         SavePointRequest request,
         CancellationToken cancellationToken = default)
     {
@@ -27,7 +27,7 @@ public sealed class WorkspaceTimeline
     }
 
     public async ValueTask RestorePointAsync(
-        IWorkspace workspace,
+        IProjectWorkspace workspace,
         TimelineNodeId nodeId,
         bool moveHead = true,
         CancellationToken cancellationToken = default)

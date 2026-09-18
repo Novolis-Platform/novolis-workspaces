@@ -1,0 +1,12 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <Import Project="..\..\build\Novolis.Workspaces.Packaging.props" />
+  <PropertyGroup>
+    <PackageId>Novolis.Workspaces.DotNet.Slnx</PackageId>
+    <RootNamespace>Novolis.Workspaces.DotNet.Slnx</RootNamespace>
+    <IsPackable>true</IsPackable>
+    <Description>Physical .NET solution topology reader for SLNX files.</Description>
+  </PropertyGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Novolis.Workspaces.DotNet.Abstractions\Novolis.Workspaces.DotNet.Abstractions.csproj" />
+  </ItemGroup>
+</Project>

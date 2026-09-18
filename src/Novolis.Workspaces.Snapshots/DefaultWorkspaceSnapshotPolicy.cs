@@ -6,7 +6,7 @@ namespace Novolis.Workspaces.Snapshots;
 /// <summary>Default include/exclude rules for workspace snapshots.</summary>
 public sealed class DefaultWorkspaceSnapshotPolicy : IWorkspaceSnapshotPolicy
 {
-    public bool ShouldInclude(IWorkspace workspace, IFileInfo file)
+    public bool ShouldInclude(IProjectWorkspace workspace, IFileInfo file)
     {
         var relative = GetRelativePath(workspace.Root.FullName, file.FullName);
         if (string.IsNullOrEmpty(relative))

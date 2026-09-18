@@ -27,6 +27,12 @@ Published docs: [https://novolis-platform.github.io/.github/novolis-workspaces/]
 | `Novolis.Timeline.Presentation` |
 | `Novolis.Workspaces.Abstractions` |
 | `Novolis.Workspaces.FileSystem` |
+| `Novolis.Workspaces.DotNet.Abstractions` |
+| `Novolis.Workspaces.DotNet.Slnx` |
+| `Novolis.Workspaces.DotNet.MSBuild` |
+| `Novolis.Workspaces.DotNet.Roslyn` |
+| `Novolis.Workspaces.DotNet.Indexing` |
+| `Novolis.Workspaces.DotNet.Git` |
 | `Novolis.Workspaces.Projects.Timeline` |
 | `Novolis.Workspaces.Snapshots` |
 | `Novolis.Workspaces.Timeline` |

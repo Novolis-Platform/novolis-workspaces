@@ -45,7 +45,8 @@ Avoid: Commit, Checkout, Repository, Merge, Rebase.
 
 | Existing | Relationship |
 |----------|----------------|
-| `Novolis.IO.Workspace` | Low-level file root for Storage.Json — optional future bridge |
+| `Novolis.IO.Workspace.IWorkspace` | Mandatory typed directory-root contract composed by `IProjectWorkspace` |
+| `Novolis.Workspaces.DotNet.*` | Physical solution topology, explicit MSBuild evaluation, and portable Roslyn facts |
 | `ISnapshotCapableEventStore` | Stream compaction — unrelated |
 | `SimulationTimeline<TState>` | Tick replay — unrelated |
 

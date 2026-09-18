@@ -8,7 +8,8 @@
 
 # Novolis.Workspaces.FileSystem
 
-Creates and opens **disk-backed workspaces** with the standard `.novolis/` layout, project folders, and JSON manifests.
+Creates and opens **disk-backed project workspaces** with the standard `.novolis/` layout,
+project folders, and JSON manifests.
 
 ## Install
 
@@ -39,7 +40,8 @@ var reopened = await service.OpenAsync(workspace.Root.FullName);
 | Type | Role |
 |------|------|
 | `WorkspaceFileSystemService` | `CreateAsync`, `OpenAsync`, `AddProjectAsync` |
-| `PhysicalWorkspace` | `IWorkspace` implementation |
+| `PhysicalProjectWorkspace` | `IProjectWorkspace` implementation |
+| `PhysicalWorkspace` | Obsolete compatibility name |
 | `PhysicalProject` | `IProject` implementation |
 | `WorkspaceLayout` | Path constants and helpers (`TimelinePath`, `ProjectsPath`, etc.) |
 | `WorkspaceLayout.CurrentSchemaVersion` | Manifest schema version (`1`) |
@@ -48,7 +50,7 @@ var reopened = await service.OpenAsync(workspace.Root.FullName);
 
 | Package | Role |
 |---------|------|
-| `Novolis.Workspaces.Abstractions` | `IWorkspace`, manifests, ids |
+| `Novolis.Workspaces.Abstractions` | `IProjectWorkspace`, manifests, ids |
 | `Novolis.Workspaces.Snapshots` | Zip capture of workspace tree |
 | `Novolis.Workspaces.Timeline` | Timeline under `.novolis/timeline` |
 | `Novolis.Timeline.FileSystem` | Persists timeline JSON |

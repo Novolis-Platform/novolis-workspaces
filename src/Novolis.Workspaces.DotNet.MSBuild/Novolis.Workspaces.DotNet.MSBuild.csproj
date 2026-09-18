@@ -1,0 +1,13 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <Import Project="..\..\build\Novolis.Workspaces.Packaging.props" />
+  <PropertyGroup>
+    <PackageId>Novolis.Workspaces.DotNet.MSBuild</PackageId>
+    <RootNamespace>Novolis.Workspaces.DotNet.MSBuild</RootNamespace>
+    <IsPackable>true</IsPackable>
+    <Description>Context-aware MSBuild evaluation for typed .NET solution workspaces.</Description>
+  </PropertyGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Novolis.Workspaces.DotNet.Abstractions\Novolis.Workspaces.DotNet.Abstractions.csproj" />
+    <PackageReference Include="Microsoft.Build" />
+  </ItemGroup>
+</Project>

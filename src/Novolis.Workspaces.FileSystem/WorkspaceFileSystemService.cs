@@ -15,7 +15,7 @@ public sealed class WorkspaceFileSystemService
         _jsonOptions = jsonOptions ?? new JsonSerializerOptions { PropertyNamingPolicy = JsonNamingPolicy.CamelCase };
     }
 
-    public async ValueTask<PhysicalWorkspace> CreateAsync(
+    public async ValueTask<PhysicalProjectWorkspace> CreateAsync(
         string workspaceRootPath,
         string name,
         CancellationToken cancellationToken = default)
@@ -34,7 +34,7 @@ public sealed class WorkspaceFileSystemService
         return await OpenAsync(workspaceRootPath, cancellationToken).ConfigureAwait(false);
     }
 
-    public async ValueTask<PhysicalWorkspace> OpenAsync(
+    public async ValueTask<PhysicalProjectWorkspace> OpenAsync(
         string workspaceRootPath,
         CancellationToken cancellationToken = default)
     {
@@ -52,11 +52,11 @@ public sealed class WorkspaceFileSystemService
             _jsonOptions) ?? throw new WorkspaceException("Workspace manifest is invalid.");
 
         var projects = LoadProjects(root.FullName, manifest);
-        return new PhysicalWorkspace(manifest, root, projects);
+        return new PhysicalProjectWorkspace(manifest, root, projects);
     }
 
     public async ValueTask<PhysicalProject> AddProjectAsync(
-        PhysicalWorkspace workspace,
+        PhysicalProjectWorkspace workspace,
         string name,
         ProjectKind kind,
         string? folderName = null,

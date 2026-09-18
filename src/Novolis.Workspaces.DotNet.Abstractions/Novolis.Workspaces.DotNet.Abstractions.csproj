@@ -1,10 +1,10 @@
 <Project Sdk="Microsoft.NET.Sdk">
   <Import Project="..\..\build\Novolis.Workspaces.Packaging.props" />
   <PropertyGroup>
-    <PackageId>Novolis.Workspaces.Abstractions</PackageId>
-    <RootNamespace>Novolis.Workspaces</RootNamespace>
+    <PackageId>Novolis.Workspaces.DotNet.Abstractions</PackageId>
+    <RootNamespace>Novolis.Workspaces.DotNet</RootNamespace>
     <IsPackable>true</IsPackable>
-    <Description>Workspace, project, and manifest model for editor and studio apps.</Description>
+    <Description>Typed .NET solution workspace contracts over an I/O workspace root.</Description>
   </PropertyGroup>
   <ItemGroup>
     <PackageReference Include="Novolis.IO.Workspace.Abstractions" />

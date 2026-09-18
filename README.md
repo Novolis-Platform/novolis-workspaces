@@ -50,6 +50,12 @@
 | `Novolis.Timeline.FileSystem` | `dotnet add package Novolis.Timeline.FileSystem` | [README](https://github.com/Novolis-Platform/novolis-workspaces/blob/main/src/Novolis.Timeline.FileSystem/README.md) |
 | `Novolis.Timeline.Memory` | `dotnet add package Novolis.Timeline.Memory` | [README](https://github.com/Novolis-Platform/novolis-workspaces/blob/main/src/Novolis.Timeline.Memory/README.md) |
 | `Novolis.Timeline.Presentation` | `dotnet add package Novolis.Timeline.Presentation` | [README](https://github.com/Novolis-Platform/novolis-workspaces/blob/main/src/Novolis.Timeline.Presentation/README.md) |
+| `Novolis.Workspaces.DotNet.Abstractions` | `dotnet add package Novolis.Workspaces.DotNet.Abstractions` | [README](https://github.com/Novolis-Platform/novolis-workspaces/blob/main/src/Novolis.Workspaces.DotNet.Abstractions/README.md) |
+| `Novolis.Workspaces.DotNet.Git` | `dotnet add package Novolis.Workspaces.DotNet.Git` | [README](https://github.com/Novolis-Platform/novolis-workspaces/blob/main/src/Novolis.Workspaces.DotNet.Git/README.md) |
+| `Novolis.Workspaces.DotNet.Indexing` | `dotnet add package Novolis.Workspaces.DotNet.Indexing` | [README](https://github.com/Novolis-Platform/novolis-workspaces/blob/main/src/Novolis.Workspaces.DotNet.Indexing/README.md) |
+| `Novolis.Workspaces.DotNet.MSBuild` | `dotnet add package Novolis.Workspaces.DotNet.MSBuild` | [README](https://github.com/Novolis-Platform/novolis-workspaces/blob/main/src/Novolis.Workspaces.DotNet.MSBuild/README.md) |
+| `Novolis.Workspaces.DotNet.Roslyn` | `dotnet add package Novolis.Workspaces.DotNet.Roslyn` | [README](https://github.com/Novolis-Platform/novolis-workspaces/blob/main/src/Novolis.Workspaces.DotNet.Roslyn/README.md) |
+| `Novolis.Workspaces.DotNet.Slnx` | `dotnet add package Novolis.Workspaces.DotNet.Slnx` | [README](https://github.com/Novolis-Platform/novolis-workspaces/blob/main/src/Novolis.Workspaces.DotNet.Slnx/README.md) |
 | `Novolis.Workspaces.Abstractions` | `dotnet add package Novolis.Workspaces.Abstractions` | [README](https://github.com/Novolis-Platform/novolis-workspaces/blob/main/src/Novolis.Workspaces.Abstractions/README.md) |
 | `Novolis.Workspaces.FileSystem` | `dotnet add package Novolis.Workspaces.FileSystem` | [README](https://github.com/Novolis-Platform/novolis-workspaces/blob/main/src/Novolis.Workspaces.FileSystem/README.md) |
 | `Novolis.Workspaces.Projects.Timeline` | `dotnet add package Novolis.Workspaces.Projects.Timeline` | [README](https://github.com/Novolis-Platform/novolis-workspaces/blob/main/src/Novolis.Workspaces.Projects.Timeline/README.md) |
@@ -84,8 +90,14 @@ Ensure your `nuget.config` includes the Novolis-Platform GitHub feed and credent
 
 | Package | Role | README |
 |---------|------|--------|
-| `Novolis.Workspaces.Abstractions` | `IWorkspace`, `IProject`, manifests | [README](src/Novolis.Workspaces.Abstractions/README.md) |
+| `Novolis.Workspaces.Abstractions` | `IProjectWorkspace`, `IProject`, manifests | [README](src/Novolis.Workspaces.Abstractions/README.md) |
 | `Novolis.Workspaces.FileSystem` | On-disk layout, open/create | [README](src/Novolis.Workspaces.FileSystem/README.md) |
+| `Novolis.Workspaces.DotNet.Abstractions` | Typed solution roots and evaluation contexts | [README](src/Novolis.Workspaces.DotNet.Abstractions/README.md) |
+| `Novolis.Workspaces.DotNet.Slnx` | Read-only physical SLNX topology | [README](src/Novolis.Workspaces.DotNet.Slnx/README.md) |
+| `Novolis.Workspaces.DotNet.Git` | Solution-to-repository relationship bridge | [README](src/Novolis.Workspaces.DotNet.Git/README.md) |
+| `Novolis.Workspaces.DotNet.MSBuild` | Explicit, target-free MSBuild evaluation | [README](src/Novolis.Workspaces.DotNet.MSBuild/README.md) |
+| `Novolis.Workspaces.DotNet.Roslyn` | Portable C# semantic projections | [README](src/Novolis.Workspaces.DotNet.Roslyn/README.md) |
+| `Novolis.Workspaces.DotNet.Indexing` | Immutable solution catalog snapshots | [README](src/Novolis.Workspaces.DotNet.Indexing/README.md) |
 | `Novolis.Snapshots.Abstractions` | `ISnapshotStore`, refs | [README](src/Novolis.Snapshots.Abstractions/README.md) |
 | `Novolis.Snapshots.Memory` | In-process snapshot store | [README](src/Novolis.Snapshots.Memory/README.md) |
 | `Novolis.Snapshots.Json` | JSON state serializer | [README](src/Novolis.Snapshots.Json/README.md) |
@@ -124,5 +136,8 @@ Workspace files default to `%LocalAppData%/Novolis/MeshBench/default-workspace`.
 
 ## Boundaries
 
-Not version control: no merge, rebase, remotes, or conflict resolution. Distinct from `Novolis.IO.Workspace` (storage file root) and `Novolis.Simulation.Replay` (tick replay).
+Not version control: no merge, rebase, remotes, or conflict resolution. The typed directory-root
+contract is `Novolis.IO.Workspace.IWorkspace`; structured authoring uses
+`Novolis.Workspaces.IProjectWorkspace`; .NET solution intelligence uses the
+`Novolis.Workspaces.DotNet.*` packages.
 

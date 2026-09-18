@@ -20,6 +20,10 @@
     <ProjectReference Include="..\..\src\Novolis.Timeline.Presentation\Novolis.Timeline.Presentation.csproj" />
     <ProjectReference Include="..\..\src\Novolis.Workspaces.Abstractions\Novolis.Workspaces.Abstractions.csproj" />
     <ProjectReference Include="..\..\src\Novolis.Workspaces.FileSystem\Novolis.Workspaces.FileSystem.csproj" />
+    <ProjectReference Include="..\..\src\Novolis.Workspaces.DotNet.Abstractions\Novolis.Workspaces.DotNet.Abstractions.csproj" />
+    <ProjectReference Include="..\..\src\Novolis.Workspaces.DotNet.Slnx\Novolis.Workspaces.DotNet.Slnx.csproj" />
+    <ProjectReference Include="..\..\src\Novolis.Workspaces.DotNet.MSBuild\Novolis.Workspaces.DotNet.MSBuild.csproj" />
+    <ProjectReference Include="..\..\src\Novolis.Workspaces.DotNet.Indexing\Novolis.Workspaces.DotNet.Indexing.csproj" />
     <ProjectReference Include="..\..\src\Novolis.Workspaces.Snapshots\Novolis.Workspaces.Snapshots.csproj" />
     <ProjectReference Include="..\..\src\Novolis.Workspaces.Timeline\Novolis.Workspaces.Timeline.csproj" />
   </ItemGroup>

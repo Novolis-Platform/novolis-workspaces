@@ -7,7 +7,7 @@ using Novolis.Workspaces.FileSystem;
 namespace Novolis.Workspaces.Snapshots;
 
 /// <summary>Captures workspace tree as zip archives using <see cref="IWorkspaceSnapshotPolicy"/>.</summary>
-public sealed class ZipWorkspaceSnapshotStore : ISnapshotStore<IWorkspace, ZipSnapshotRef>
+public sealed class ZipWorkspaceSnapshotStore : ISnapshotStore<IProjectWorkspace, ZipSnapshotRef>
 {
     private readonly IFileSystem _fileSystem;
     private readonly IDirectoryInfo _snapshotsRoot;
@@ -26,7 +26,7 @@ public sealed class ZipWorkspaceSnapshotStore : ISnapshotStore<IWorkspace, ZipSn
     }
 
     public async ValueTask<ZipSnapshotRef> SaveAsync(
-        IWorkspace workspace,
+        IProjectWorkspace workspace,
         SnapshotRequest request,
         CancellationToken cancellationToken = default)
     {
@@ -54,7 +54,7 @@ public sealed class ZipWorkspaceSnapshotStore : ISnapshotStore<IWorkspace, ZipSn
     }
 
     public async ValueTask RestoreAsync(
-        IWorkspace workspace,
+        IProjectWorkspace workspace,
         ZipSnapshotRef snapshot,
         CancellationToken cancellationToken = default)
     {
@@ -79,7 +79,7 @@ public sealed class ZipWorkspaceSnapshotStore : ISnapshotStore<IWorkspace, ZipSn
         }
     }
 
-    private IEnumerable<IFileInfo> EnumerateIncludedFiles(IWorkspace workspace)
+    private IEnumerable<IFileInfo> EnumerateIncludedFiles(IProjectWorkspace workspace)
     {
         var root = workspace.Root.FullName;
         foreach (var file in _fileSystem.Directory.EnumerateFiles(root, "*", SearchOption.AllDirectories))
@@ -90,7 +90,7 @@ public sealed class ZipWorkspaceSnapshotStore : ISnapshotStore<IWorkspace, ZipSn
         }
     }
 
-    private void ClearIncludedPaths(IWorkspace workspace)
+    private void ClearIncludedPaths(IProjectWorkspace workspace)
     {
         foreach (var file in EnumerateIncludedFiles(workspace))
             _fileSystem.File.Delete(file.FullName);

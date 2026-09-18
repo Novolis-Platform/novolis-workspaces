@@ -1,0 +1,13 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <Import Project="..\..\build\Novolis.Workspaces.Packaging.props" />
+  <PropertyGroup>
+    <PackageId>Novolis.Workspaces.DotNet.Git</PackageId>
+    <RootNamespace>Novolis.Workspaces.DotNet.Git</RootNamespace>
+    <IsPackable>true</IsPackable>
+    <Description>Explicit relationships between .NET solution and Git repository workspaces.</Description>
+  </PropertyGroup>
+  <ItemGroup>
+    <PackageReference Include="Novolis.IO.Git" />
+    <ProjectReference Include="..\Novolis.Workspaces.DotNet.Abstractions\Novolis.Workspaces.DotNet.Abstractions.csproj" />
+  </ItemGroup>
+</Project>

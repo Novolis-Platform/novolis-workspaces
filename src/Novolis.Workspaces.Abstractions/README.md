@@ -8,7 +8,9 @@
 
 # Novolis.Workspaces.Abstractions
 
-Core contracts for **editor/studio workspace containers**: a workspace holds projects, manifests, and well-known folder semantics. Implementations live in `Novolis.Workspaces.FileSystem`.
+Core contracts for **editor/studio project workspaces**: a project workspace holds projects,
+manifests, and well-known folder semantics. Implementations live in
+`Novolis.Workspaces.FileSystem`.
 
 ## Install
 
@@ -23,7 +25,7 @@ Depends on **System.IO.Abstractions** (`IDirectoryInfo` on workspace/project roo
 ```csharp
 using Novolis.Workspaces;
 
-IWorkspace workspace = /* PhysicalWorkspace from FileSystem package */;
+IProjectWorkspace workspace = /* PhysicalProjectWorkspace from FileSystem package */;
 
 foreach (var project in workspace.Projects)
 {
@@ -35,7 +37,8 @@ foreach (var project in workspace.Projects)
 
 | Type | Role |
 |------|------|
-| `IWorkspace` | Id, name, root, manifest, projects |
+| `IProjectWorkspace` | Id, name, root, manifest, projects |
+| `IWorkspace` | Obsolete compatibility name for `IProjectWorkspace` |
 | `IProject` | Id, name, kind, root, manifest |
 | `WorkspaceManifest` | `workspace.json` shape |
 | `ProjectManifest` | `project.json` shape |
@@ -49,12 +52,13 @@ foreach (var project in workspace.Projects)
 | Package | Role |
 |---------|------|
 | `Novolis.Workspaces.FileSystem` | Create/open workspaces on disk |
-| `Novolis.Workspaces.Snapshots` | Zip snapshots of `IWorkspace` |
+| `Novolis.Workspaces.Snapshots` | Zip snapshots of `IProjectWorkspace` |
 | `Novolis.Workspaces.Timeline` | Save/restore points |
 | `Novolis.Workspaces.Projects.Timeline` | Project-scoped timeline |
 | `Novolis.Snapshots.Abstractions` | Snapshot primitives composed by adapters |
 
 ## Notes
 
-On-disk layout: [design.md](../../docs/design.md). Distinct from `Novolis.IO.Workspace` (storage file root).
+On-disk layout: [design.md](../../docs/design.md). `Novolis.IO.Workspace.IWorkspace` is the
+unrelated typed directory-root contract composed by this package.
 

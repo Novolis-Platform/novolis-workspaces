@@ -27,6 +27,24 @@
     "Novolis.Timeline.Presentation": {
       "project": "src/Novolis.Timeline.Presentation/Novolis.Timeline.Presentation.csproj"
     },
+    "Novolis.Workspaces.DotNet.Abstractions": {
+      "project": "src/Novolis.Workspaces.DotNet.Abstractions/Novolis.Workspaces.DotNet.Abstractions.csproj"
+    },
+    "Novolis.Workspaces.DotNet.Slnx": {
+      "project": "src/Novolis.Workspaces.DotNet.Slnx/Novolis.Workspaces.DotNet.Slnx.csproj"
+    },
+    "Novolis.Workspaces.DotNet.MSBuild": {
+      "project": "src/Novolis.Workspaces.DotNet.MSBuild/Novolis.Workspaces.DotNet.MSBuild.csproj"
+    },
+    "Novolis.Workspaces.DotNet.Roslyn": {
+      "project": "src/Novolis.Workspaces.DotNet.Roslyn/Novolis.Workspaces.DotNet.Roslyn.csproj"
+    },
+    "Novolis.Workspaces.DotNet.Indexing": {
+      "project": "src/Novolis.Workspaces.DotNet.Indexing/Novolis.Workspaces.DotNet.Indexing.csproj"
+    },
+    "Novolis.Workspaces.DotNet.Git": {
+      "project": "src/Novolis.Workspaces.DotNet.Git/Novolis.Workspaces.DotNet.Git.csproj"
+    },
     "Novolis.Workspaces.Abstractions": {
       "project": "src/Novolis.Workspaces.Abstractions/Novolis.Workspaces.Abstractions.csproj"
     },

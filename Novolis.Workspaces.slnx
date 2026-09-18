@@ -11,6 +11,12 @@
     <Project Path="src/Novolis.Timeline.Presentation/Novolis.Timeline.Presentation.csproj" />
     <Project Path="src/Novolis.Workspaces.Abstractions/Novolis.Workspaces.Abstractions.csproj" />
     <Project Path="src/Novolis.Workspaces.FileSystem/Novolis.Workspaces.FileSystem.csproj" />
+    <Project Path="src/Novolis.Workspaces.DotNet.Abstractions/Novolis.Workspaces.DotNet.Abstractions.csproj" />
+    <Project Path="src/Novolis.Workspaces.DotNet.Slnx/Novolis.Workspaces.DotNet.Slnx.csproj" />
+    <Project Path="src/Novolis.Workspaces.DotNet.MSBuild/Novolis.Workspaces.DotNet.MSBuild.csproj" />
+    <Project Path="src/Novolis.Workspaces.DotNet.Roslyn/Novolis.Workspaces.DotNet.Roslyn.csproj" />
+    <Project Path="src/Novolis.Workspaces.DotNet.Indexing/Novolis.Workspaces.DotNet.Indexing.csproj" />
+    <Project Path="src/Novolis.Workspaces.DotNet.Git/Novolis.Workspaces.DotNet.Git.csproj" />
     <Project Path="src/Novolis.Workspaces.Snapshots/Novolis.Workspaces.Snapshots.csproj" />
     <Project Path="src/Novolis.Workspaces.Timeline/Novolis.Workspaces.Timeline.csproj" />
     <Project Path="src/Novolis.Workspaces.Projects.Timeline/Novolis.Workspaces.Projects.Timeline.csproj" />
