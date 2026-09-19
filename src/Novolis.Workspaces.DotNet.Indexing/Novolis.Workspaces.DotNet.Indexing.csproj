@@ -4,12 +4,13 @@
     <PackageId>Novolis.Workspaces.DotNet.Indexing</PackageId>
     <RootNamespace>Novolis.Workspaces.DotNet.Indexing</RootNamespace>
     <IsPackable>true</IsPackable>
-    <Description>Immutable solution catalog snapshots for typed .NET solution workspaces.</Description>
+    <Description>Immutable solution catalog snapshots and generated typed exploration façades.</Description>
   </PropertyGroup>
   <ItemGroup>
     <ProjectReference Include="..\Novolis.Workspaces.DotNet.Abstractions\Novolis.Workspaces.DotNet.Abstractions.csproj" />
     <ProjectReference Include="..\Novolis.Workspaces.DotNet.MSBuild\Novolis.Workspaces.DotNet.MSBuild.csproj" />
     <ProjectReference Include="..\Novolis.Workspaces.DotNet.Roslyn\Novolis.Workspaces.DotNet.Roslyn.csproj" />
     <ProjectReference Include="..\Novolis.Workspaces.DotNet.Slnx\Novolis.Workspaces.DotNet.Slnx.csproj" />
+    <PackageReference Include="Microsoft.CodeAnalysis.CSharp" />
   </ItemGroup>
 </Project>
