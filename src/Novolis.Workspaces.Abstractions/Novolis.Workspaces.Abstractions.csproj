@@ -7,7 +7,7 @@
     <Description>Workspace, project, and manifest model for editor and studio apps.</Description>
   </PropertyGroup>
   <ItemGroup>
-    <PackageReference Include="Novolis.IO.Workspace.Abstractions" />
+    <LibraryReference Include="Novolis.IO.Workspace.Abstractions" />
     <PackageReference Include="System.IO.Abstractions" />
   </ItemGroup>
 </Project>

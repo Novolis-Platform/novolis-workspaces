@@ -29,6 +29,11 @@
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
     </PackageReference>
   </ItemGroup>
+  <PropertyGroup>
+    <LibraryReferenceDefaultVersion Condition="'$(LibraryReferenceDefaultVersion)' == ''">2026.1.*</LibraryReferenceDefaultVersion>
+  </PropertyGroup>
+  <Import Project="$(MSBuildThisFileDirectory)build\Novolis.MSBuild.LibraryReference.props"
+          Condition="Exists('$(MSBuildThisFileDirectory)build\Novolis.MSBuild.LibraryReference.props')" />
   <Import Project="$(MSBuildThisFileDirectory)..\novolis-governance\build\Novolis.GitHubPackages.props"
           Condition="Exists('$(MSBuildThisFileDirectory)..\novolis-governance\build\Novolis.GitHubPackages.props')" />
   <Import Project="$(MSBuildThisFileDirectory)build\Novolis.Documentation.props"

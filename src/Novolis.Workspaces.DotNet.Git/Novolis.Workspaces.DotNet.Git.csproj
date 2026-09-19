@@ -7,7 +7,7 @@
     <Description>Explicit relationships between .NET solution and Git repository workspaces.</Description>
   </PropertyGroup>
   <ItemGroup>
-    <PackageReference Include="Novolis.IO.Git" />
+    <LibraryReference Include="Novolis.IO.Git" />
     <ProjectReference Include="..\Novolis.Workspaces.DotNet.Abstractions\Novolis.Workspaces.DotNet.Abstractions.csproj" />
   </ItemGroup>
 </Project>

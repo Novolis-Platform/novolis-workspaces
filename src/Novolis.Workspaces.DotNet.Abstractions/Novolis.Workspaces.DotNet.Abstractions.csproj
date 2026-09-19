@@ -7,7 +7,7 @@
     <Description>Typed .NET solution workspace contracts over an I/O workspace root.</Description>
   </PropertyGroup>
   <ItemGroup>
-    <PackageReference Include="Novolis.IO.Workspace.Abstractions" />
+    <LibraryReference Include="Novolis.IO.Workspace.Abstractions" />
     <PackageReference Include="System.IO.Abstractions" />
   </ItemGroup>
 </Project>

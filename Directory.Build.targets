@@ -3,4 +3,10 @@
           Condition="Exists('$(MSBuildThisFileDirectory)..\novolis-governance\build\Novolis.Version.targets')" />
   <Import Project="$(MSBuildThisFileDirectory)..\novolis-governance\build\Novolis.Packaging.targets"
           Condition="Exists('$(MSBuildThisFileDirectory)..\novolis-governance\build\Novolis.Packaging.targets')" />
+  <PropertyGroup>
+    <LibraryReferenceDefaultVersion>2026.1.*</LibraryReferenceDefaultVersion>
+  </PropertyGroup>
+  <!-- CI / single-repo: expand LibraryReference when governance/novolis-msbuild are not siblings. -->
+  <Import Project="$(MSBuildThisFileDirectory)build\Novolis.MSBuild.LibraryReference.targets"
+          Condition="Exists('$(MSBuildThisFileDirectory)build\Novolis.MSBuild.LibraryReference.targets')" />
 </Project>
