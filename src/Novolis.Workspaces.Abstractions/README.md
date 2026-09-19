@@ -38,7 +38,6 @@ foreach (var project in workspace.Projects)
 | Type | Role |
 |------|------|
 | `IProjectWorkspace` | Id, name, root, manifest, projects |
-| `IWorkspace` | Obsolete compatibility name for `IProjectWorkspace` |
 | `IProject` | Id, name, kind, root, manifest |
 | `WorkspaceManifest` | `workspace.json` shape |
 | `ProjectManifest` | `project.json` shape |

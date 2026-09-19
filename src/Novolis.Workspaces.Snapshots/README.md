@@ -8,7 +8,7 @@
 
 # Novolis.Workspaces.Snapshots
 
-Captures an entire **`IWorkspace`** tree as zip archives using **`IWorkspaceSnapshotPolicy`** include/exclude rules. Timeline data under `.novolis/timeline/` is excluded from capture and preserved across restore.
+Captures an entire **`IProjectWorkspace`** tree as zip archives using **`IWorkspaceSnapshotPolicy`** include/exclude rules. Timeline data under `.novolis/timeline/` is excluded from capture and preserved across restore.
 
 ## Install
 
@@ -40,7 +40,7 @@ var snapshot = await store.SaveAsync(
 
 | Type | Role |
 |------|------|
-| `ZipWorkspaceSnapshotStore` | `ISnapshotStore<IWorkspace, ZipSnapshotRef>` |
+| `ZipWorkspaceSnapshotStore` | `ISnapshotStore<IProjectWorkspace, ZipSnapshotRef>` |
 | `IWorkspaceSnapshotPolicy` | `ShouldInclude(workspace, file)` |
 | `DefaultWorkspaceSnapshotPolicy` | Default include/exclude for documents, assets, manifests |
 
@@ -50,7 +50,7 @@ Default policy excludes `.novolis/timeline/`, `cache/`, `temp/`, `outputs/`, and
 
 | Package | Role |
 |---------|------|
-| `Novolis.Workspaces.Abstractions` | `IWorkspace` being captured |
+| `Novolis.Workspaces.Abstractions` | `IProjectWorkspace` being captured |
 | `Novolis.Workspaces.FileSystem` | Layout paths and open/create |
 | `Novolis.Snapshots.Abstractions` | `ZipSnapshotRef`, `SnapshotRequest` |
 | `Novolis.Snapshots.Zip` | Single-state zip store (not whole workspace) |

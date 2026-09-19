@@ -12,12 +12,6 @@ public interface IProjectWorkspace : RootWorkspace
     IReadOnlyList<IProject> Projects { get; }
 }
 
-/// <summary>
-/// Compatibility name for <see cref="IProjectWorkspace"/>.
-/// </summary>
-[Obsolete("Use IProjectWorkspace. IWorkspace is the typed directory-root abstraction in Novolis.IO.Workspace.")]
-public interface IWorkspace : IProjectWorkspace;
-
 /// <summary>Unit of meaningful work inside a workspace.</summary>
 public interface IProject
 {

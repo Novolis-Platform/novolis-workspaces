@@ -41,7 +41,6 @@ var reopened = await service.OpenAsync(workspace.Root.FullName);
 |------|------|
 | `WorkspaceFileSystemService` | `CreateAsync`, `OpenAsync`, `AddProjectAsync` |
 | `PhysicalProjectWorkspace` | `IProjectWorkspace` implementation |
-| `PhysicalWorkspace` | Obsolete compatibility name |
 | `PhysicalProject` | `IProject` implementation |
 | `WorkspaceLayout` | Path constants and helpers (`TimelinePath`, `ProjectsPath`, etc.) |
 | `WorkspaceLayout.CurrentSchemaVersion` | Manifest schema version (`1`) |
