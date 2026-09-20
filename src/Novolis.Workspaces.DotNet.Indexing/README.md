@@ -1,7 +1,7 @@
 # Novolis.Workspaces.DotNet.Indexing
 
 Immutable, queryable solution catalog snapshots derived from SLNX, MSBuild, and Roslyn projections,
-plus dynamic generation of a typed C# exploration façade.
+plus generated typed C# exploration façades.
 
 ## Install
 
@@ -15,11 +15,10 @@ dotnet add package Novolis.Workspaces.DotNet.Indexing
 evaluation, semantic, and diagnostic facts.
 
 `SolutionExplorationGenerator` then emits C# whose members are the solution's named projects,
-namespace tree, and types:
+namespace tree, and types. Compile that source into the consuming project (or compile it
+together with a consumer via `InvokeConsumer`) so access is ordinary C#:
 
 ```csharp
-var generated = SolutionExplorationGenerator.Generate(catalog);
-var compiled = SolutionExplorationCompiler.Compile(generated);
-var walk = compiled.Walk(catalog);
-// solution.Projects.DemoLib.Novolis.Sample.Widget => Novolis.Sample.Widget
+var solution = new GeneratedSolution(catalog);
+SemanticType identityService = solution.Projects.DemoLib.Services.IdentityService;
 ```

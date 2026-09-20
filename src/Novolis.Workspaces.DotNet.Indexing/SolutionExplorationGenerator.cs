@@ -15,8 +15,8 @@ public sealed record GeneratedSolutionExploration(
     string WalkTypeName);
 
 /// <summary>
-/// Emits a C# façade whose property chain is the typed exploration path
-/// <c>solution.Projects.DemoLib.Novolis.Sample.Widget</c>.
+/// Emits a C# façade whose property chain is the typed exploration path, for example
+/// <c>solution.Projects.DemoLib.Services.IdentityService</c>.
 /// </summary>
 public static class SolutionExplorationGenerator
 {
