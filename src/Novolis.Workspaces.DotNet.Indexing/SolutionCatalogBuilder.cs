@@ -6,26 +6,6 @@ using Novolis.Workspaces.DotNet.Slnx;
 
 namespace Novolis.Workspaces.DotNet.Indexing;
 
-/// <summary>A cataloged project together with its evaluated and semantic projections.</summary>
-public sealed record SolutionCatalogProject(
-    SlnxProjectEntry Project,
-    EvaluatedProject Evaluation,
-    SemanticProject Semantic);
-
-/// <summary>Portable provenance for a catalog snapshot.</summary>
-public sealed record SolutionCatalogProvenance(
-    string WorkspaceRootPath,
-    string SolutionPath,
-    DateTimeOffset CreatedAt);
-
-/// <summary>Immutable, portable facts derived from one solution workspace snapshot.</summary>
-public sealed record SolutionCatalog(
-    string SnapshotId,
-    SolutionCatalogProvenance Provenance,
-    EvaluationContext Context,
-    IReadOnlyList<SolutionCatalogProject> Projects,
-    IReadOnlyList<WorkspaceDiagnostic> Diagnostics);
-
 /// <summary>Creates deterministic solution catalog snapshots from SLNX, MSBuild, and Roslyn projections.</summary>
 public sealed class SolutionCatalogBuilder
 {

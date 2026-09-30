@@ -4,16 +4,6 @@ using Novolis.Workspaces.DotNet.Slnx;
 
 namespace Novolis.Workspaces.DotNet.Indexing;
 
-/// <summary>Options for generating a typed C# exploration façade from a catalog.</summary>
-public sealed record SolutionExplorationGenerationOptions(bool PublicTypesOnly = true);
-
-/// <summary>Generated C# that exposes named projects, namespaces, and types as real members.</summary>
-public sealed record GeneratedSolutionExploration(
-    string Source,
-    string Namespace,
-    string SolutionTypeName,
-    string WalkTypeName);
-
 /// <summary>
 /// Emits a C# façade whose property chain is the typed exploration path, for example
 /// <c>solution.Projects.DemoLib.Services.IdentityService</c>.

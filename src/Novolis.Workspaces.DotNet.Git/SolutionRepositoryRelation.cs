@@ -2,14 +2,6 @@ using Novolis.IO.Git;
 
 namespace Novolis.Workspaces.DotNet.Git;
 
-/// <summary>Physical relation of a solution workspace to a Git repository workspace.</summary>
-public enum SolutionRepositoryRelationKind
-{
-    SameRoot = 0,
-    SolutionNestedInRepository = 1,
-    Unrelated = 2,
-}
-
 /// <summary>Explicitly relates one typed solution workspace to one typed Git repository workspace.</summary>
 public sealed record SolutionRepositoryRelation(
     SolutionWorkspace Solution,

@@ -136,13 +136,3 @@ public static class PlatformSlnxGenerator
         return sw.ToString();
     }
 }
-
-/// <summary>Result of generating the platform SLNX and package map.</summary>
-public sealed record PlatformSlnxResult(
-    string OutputPath,
-    string PackageToProjectMap,
-    int PackageToProjectCount,
-    int RepositoriesFound,
-    int RepositoriesIncluded,
-    int TotalProjects,
-    IReadOnlyList<string> Warnings);

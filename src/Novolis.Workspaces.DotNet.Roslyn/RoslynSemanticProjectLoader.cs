@@ -4,21 +4,6 @@ using Novolis.Workspaces.DotNet.MSBuild;
 
 namespace Novolis.Workspaces.DotNet.Roslyn;
 
-/// <summary>A portable semantic description of one declared C# type.</summary>
-public sealed record SemanticType(
-    string MetadataName,
-    string Namespace,
-    string Kind,
-    bool IsPublic,
-    string? SourcePath);
-
-/// <summary>A portable Roslyn projection for one evaluated project.</summary>
-public sealed record SemanticProject(
-    string ProjectPath,
-    IReadOnlyList<string> Documents,
-    IReadOnlyList<SemanticType> Types,
-    IReadOnlyList<WorkspaceDiagnostic> Diagnostics);
-
 /// <summary>Loads an MSBuild project through Roslyn and emits portable semantic facts.</summary>
 public sealed class RoslynSemanticProjectLoader
 {

@@ -1,0 +1,14 @@
+﻿using System.IO.Abstractions;
+using RootWorkspace = Novolis.IO.Workspace.IWorkspace;
+
+namespace Novolis.Workspaces;
+
+/// <summary>Unit of meaningful work inside a workspace.</summary>
+public interface IProject
+{
+    ProjectId Id { get; }
+    string Name { get; }
+    ProjectKind Kind { get; }
+    IDirectoryInfo Root { get; }
+    ProjectManifest Manifest { get; }
+}

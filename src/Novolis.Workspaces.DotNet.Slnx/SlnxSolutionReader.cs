@@ -2,19 +2,6 @@ using System.Xml.Linq;
 
 namespace Novolis.Workspaces.DotNet.Slnx;
 
-/// <summary>One project entry declared by an SLNX solution document.</summary>
-public sealed record SlnxProjectEntry(string RelativePath, string FullPath, string? Name);
-
-/// <summary>One solution folder declared by an SLNX solution document.</summary>
-public sealed record SlnxSolutionFolder(string Name);
-
-/// <summary>Read-only physical topology projected from an SLNX file.</summary>
-public sealed record SlnxSolutionTopology(
-    SolutionWorkspace Workspace,
-    IReadOnlyList<SlnxProjectEntry> Projects,
-    IReadOnlyList<SlnxSolutionFolder> Folders,
-    IReadOnlyList<WorkspaceDiagnostic> Diagnostics);
-
 /// <summary>Reads the topology of modern XML solution files without rewriting them.</summary>
 public sealed class SlnxSolutionReader
 {
