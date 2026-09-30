@@ -70,26 +70,31 @@ public static class PlatformSlnxGenerator
 
                     foreach (var sourceProject in sourceFolder.Elements().Where(e => e.Name.LocalName == "Project"))
                     {
-                        var projectPath = (string?)sourceProject.Attribute("Path") ?? "";
-                        var adjusted = Path.Combine(repo.Name, projectPath).Replace('/', '\\');
+                        var projectPath = ((string?)sourceProject.Attribute("Path") ?? "").Replace('\\', '/').TrimStart('/');
+                        if (projectPath.Length == 0)
+                            continue;
+                        var solutionProjectPath = repo.Name + "\\" + projectPath.Replace('/', '\\');
                         if (masterFolder.Elements("Project").Any(p =>
-                                string.Equals((string?)p.Attribute("Path"), adjusted, StringComparison.OrdinalIgnoreCase)))
+                                string.Equals((string?)p.Attribute("Path"), solutionProjectPath, StringComparison.OrdinalIgnoreCase)))
                             continue;
-                        if (Regex.IsMatch(adjusted, @"(?i)(^|[\\/])Android([\\/]|$)|\.Android\.csproj$"))
+                        if (Regex.IsMatch(solutionProjectPath, @"(?i)(^|[\\/])Android([\\/]|$)|\.Android\.csproj$"))
                             continue;
-                        if (Regex.IsMatch(adjusted, @"(?i)Novolis\.Agent\.Unit\.csproj$"))
+                        if (Regex.IsMatch(solutionProjectPath, @"(?i)Novolis\.Agent\.Unit\.csproj$"))
                             continue;
                         if (validateProjectReferences)
                         {
-                            var full = Path.Combine(workspaceRoot, adjusted);
+                            var full = Path.Combine(
+                                workspaceRoot,
+                                repo.Name,
+                                projectPath.Replace('/', Path.DirectorySeparatorChar));
                             if (!File.Exists(full))
                             {
-                                warnings.Add($"Missing project file: {adjusted}");
+                                warnings.Add($"Missing project file: {solutionProjectPath}");
                                 continue;
                             }
                         }
 
-                        masterFolder.Add(new XElement("Project", new XAttribute("Path", adjusted)));
+                        masterFolder.Add(new XElement("Project", new XAttribute("Path", solutionProjectPath)));
                         projectsIncluded++;
                     }
                 }
