@@ -7,7 +7,7 @@ namespace Novolis.Workspaces.DotNet.Slnx;
 public static class ProjectRefModeVerifier
 {
     private static readonly Regex ExcludeRepo = new(
-        @"workflows|governance|registry|lab|utilities|apps|installer|experimental|smoketest|template-dotnet",
+        @"workflows|governance|lab|utilities|apps|installer|experimental|smoketest|template-dotnet",
         RegexOptions.IgnoreCase | RegexOptions.CultureInvariant);
 
     public static IReadOnlyList<string> Verify(string workspaceRoot, bool regenerateMap = true)

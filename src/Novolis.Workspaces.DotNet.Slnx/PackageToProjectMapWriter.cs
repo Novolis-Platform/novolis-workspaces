@@ -7,7 +7,7 @@ namespace Novolis.Workspaces.DotNet.Slnx;
 public static class PackageToProjectMapWriter
 {
     private static readonly Regex ExcludeRepo = new(
-        @"workflows|governance|registry|lab|utilities|apps|installer|experimental|smoketest|template-dotnet",
+        @"workflows|governance|lab|utilities|apps|installer|experimental|smoketest|template-dotnet",
         RegexOptions.IgnoreCase | RegexOptions.CultureInvariant);
 
     public static int Write(string workspaceRoot, string outputPath)
