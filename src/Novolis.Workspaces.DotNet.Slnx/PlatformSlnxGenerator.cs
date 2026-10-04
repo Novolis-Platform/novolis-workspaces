@@ -13,6 +13,7 @@ public static class PlatformSlnxGenerator
         "novolis-experimental",
         "novolis-smoketest",
         "novolis-template-dotnet",
+        "novolis-reach",
         "merglyph",
     ];
 
