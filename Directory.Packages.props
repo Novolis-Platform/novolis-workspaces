@@ -31,7 +31,7 @@
     <PackageVersion Include="Novolis.Rendering.DependencyInjection" Version="2026.1.*" />
     <PackageVersion Include="Novolis.Rendering.Materials" Version="2026.1.*" />
     <PackageVersion Include="Novolis.Rendering.PathTrace.Demos" Version="2026.1.*" />
-    <PackageVersion Include="Novolis.Rendering.Presentation.Silk" Version="2026.1.*" />
+    <PackageVersion Include="Novolis.Silk" Version="2026.1.*" />
     <PackageVersion Include="Novolis.Rendering.Runtime" Version="2026.1.*" />
     <PackageVersion Include="Novolis.Rendering.Scene" Version="2026.1.*" />
     <PackageVersion Include="Novolis.Simulation.View" Version="2026.1.*" />
