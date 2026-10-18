@@ -4,22 +4,25 @@
     <CentralPackageFloatingVersionsEnabled>true</CentralPackageFloatingVersionsEnabled>
   </PropertyGroup>
   <ItemGroup>
-    <PackageVersion Include="Microsoft.SourceLink.GitHub" Version="10.0.401" />
-    <PackageVersion Include="Microsoft.Build" Version="18.9.6" />
-    <PackageVersion Include="Microsoft.Build.Locator" Version="1.9.1" />
+    <PackageVersion Include="Microsoft.SourceLink.GitHub" Version="10.0.402" />
+    <PackageVersion Include="Microsoft.Build.Locator" Version="1.11.2" />
+    <!-- Roslyn's net10.0 MSBuild workspace host requires the framework asset. -->
+    <PackageVersion Include="Microsoft.Build.Framework" Version="18.11.0" />
+    <!-- MSBuild 18.11's locator validation requires this build-only asset to be private. -->
+    <PackageVersion Include="Microsoft.NET.StringTools" Version="18.11.0" />
     <PackageVersion Include="Microsoft.CodeAnalysis.CSharp" Version="5.9.0" />
     <PackageVersion Include="Microsoft.CodeAnalysis.CSharp.Workspaces" Version="5.9.0" />
     <PackageVersion Include="Microsoft.CodeAnalysis.Workspaces.MSBuild" Version="5.9.0" />
-    <PackageVersion Include="JetBrains.Annotations" Version="2025.2.4" />
-    <PackageVersion Include="TUnit" Version="1.72.16" />
+    <PackageVersion Include="JetBrains.Annotations" Version="2026.2.0" />
+    <PackageVersion Include="TUnit" Version="1.75.0" />
     <PackageVersion Include="System.IO.Abstractions" Version="22.3.0" />
     <PackageVersion Include="System.IO.Abstractions.TestingHelpers" Version="22.3.0" />
-    <PackageVersion Include="Avalonia" Version="12.1.3" />
+    <PackageVersion Include="Avalonia" Version="12.1.4" />
     <PackageVersion Include="Avalonia.Controls.DataGrid" Version="12.1.2" />
-    <PackageVersion Include="Avalonia.Desktop" Version="12.1.3" />
-    <PackageVersion Include="Avalonia.Fonts.Inter" Version="12.1.3" />
-    <PackageVersion Include="Avalonia.Themes.Fluent" Version="12.1.3" />
-    <PackageVersion Include="Microsoft.Extensions.Hosting" Version="10.0.12" />
+    <PackageVersion Include="Avalonia.Desktop" Version="12.1.4" />
+    <PackageVersion Include="Avalonia.Fonts.Inter" Version="12.1.4" />
+    <PackageVersion Include="Avalonia.Themes.Fluent" Version="12.1.4" />
+    <PackageVersion Include="Microsoft.Extensions.Hosting" Version="10.0.13" />
     <PackageVersion Include="Novolis.IO.Workspace.Abstractions" Version="2026.1.*" />
     <PackageVersion Include="Novolis.IO.Git" Version="2026.1.*" />
     <PackageVersion Include="Novolis.Avalonia.Rendering" Version="2026.1.*" />
@@ -37,3 +40,4 @@
     <PackageVersion Include="Novolis.Simulation.View" Version="2026.1.*" />
   </ItemGroup>
 </Project>
+

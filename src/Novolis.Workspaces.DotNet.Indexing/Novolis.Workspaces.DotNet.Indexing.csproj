@@ -5,6 +5,8 @@
     <RootNamespace>Novolis.Workspaces.DotNet.Indexing</RootNamespace>
     <IsPackable>true</IsPackable>
     <Description>Immutable solution catalog snapshots and generated typed exploration façades.</Description>
+    <!-- Microsoft.NET.StringTools is MSBuild-only infrastructure and is never loaded at runtime. -->
+    <SuppressTfmSupportBuildWarnings>true</SuppressTfmSupportBuildWarnings>
   </PropertyGroup>
   <ItemGroup>
     <ProjectReference Include="..\Novolis.Workspaces.DotNet.Abstractions\Novolis.Workspaces.DotNet.Abstractions.csproj" />
@@ -12,5 +14,7 @@
     <ProjectReference Include="..\Novolis.Workspaces.DotNet.Roslyn\Novolis.Workspaces.DotNet.Roslyn.csproj" />
     <ProjectReference Include="..\Novolis.Workspaces.DotNet.Slnx\Novolis.Workspaces.DotNet.Slnx.csproj" />
     <PackageReference Include="Microsoft.CodeAnalysis.CSharp" />
+    <PackageReference Include="Microsoft.Build.Framework" ExcludeAssets="runtime" PrivateAssets="all" />
+    <PackageReference Include="Microsoft.NET.StringTools" ExcludeAssets="runtime" PrivateAssets="all" />
   </ItemGroup>
 </Project>

@@ -8,7 +8,6 @@
   </PropertyGroup>
   <ItemGroup>
     <ProjectReference Include="..\Novolis.Workspaces.DotNet.Abstractions\Novolis.Workspaces.DotNet.Abstractions.csproj" />
-    <PackageReference Include="Microsoft.Build" ExcludeAssets="runtime" />
     <PackageReference Include="Microsoft.Build.Locator" />
   </ItemGroup>
 </Project>
